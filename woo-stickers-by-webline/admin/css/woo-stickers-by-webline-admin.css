@@ -1,0 +1,96 @@
+/**
+ * All of the CSS for your admin-specific functionality should be
+ * included in this file.
+ */
+.wsbw-sticker-options-wrap input.small-text{width: 95px;}
+#woo_stickers_data div.form-field{padding: 5px 20px 5px 162px;}
+#woo_stickers_data .nav-tab.nav-tab-active {
+    background-color: #fff;
+    color: #444;
+}
+.woo_stickers_tab a::before {content:"\f313" !important;}
+.custom_option, .wli_none { display: none; }
+.custom_option.wli_block { display: block; }
+.woo_opt label { padding-right: 10px; }
+.form-wrap .woo_opt label { display: inline-block; }
+table.wsbw_tab_content {width: 100%;}
+.wsbw_tab_content .form-field input[type=text] { width: auto; }
+.woocommerce_options_panel .form-field .woo_opt label.radio-label { width: auto; margin: 0; float: none; }
+.woocommerce_options_panel .form-field { padding: 5px 20px 5px 162px!important; }   
+input.wsbw-small-text { width: 78px !important;margin-right: 5px !important;}
+
+/* Show other plugin Start
+    19-06-2024
+ */
+ .show-other-plugin {
+    background-color: #FDBC33 !important;
+}
+.show-other-plugin h2,
+.show-other-plugin h3,
+.show-other-plugin p, 
+.show-other-plugin ul li {
+    color: #282928;
+}
+.show-other-plugin h2.wosbw-heading {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+.show-other-plugin h3.wosbw-heading {
+    font-weight: 400;
+}
+.show-other-plugin h3.wosbw-heading span {
+    font-weight: 500;
+}
+.show-other-plugin hr {
+    border-top: 1px solid #414141;
+    border-bottom: 0;
+}
+
+ul.custom-bullet li {
+    background-image: url('../images/list-icon.svg');
+    background-repeat: no-repeat;
+    height: 18px;
+    background-position-y: top;
+    padding-left: 26px;
+    font-size: 14px;
+}
+.show-other-plugin p {
+    margin-top: 10px !important;
+    font-size: 15px !important;
+}
+.show-other-plugin .button-install {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 14px;
+    color: #EEEEEE;
+    line-height: 2.15384615;
+    min-height: 30px;
+    margin: 0;
+    padding: 4px 14px;
+    cursor: pointer;
+    -webkit-appearance: none;
+    border-radius: 3px;
+    white-space: nowrap;
+    box-sizing: border-box;
+    border: none;
+    background-color: #282928;
+    box-shadow: 0 3px 0 #696969;
+    transition: 0.3s;
+}
+.show-other-plugin .button-install:hover {    
+    box-shadow: 0 4px 0 #696969;
+}
+/* Show other plugin End*/
+
+.text-val-bef{
+    font-size: 13px !important;
+    line-height: 1.5 !important;
+    margin-top: -10px !important;
+    font-weight: 400 !important;
+}
+
+.text-val-aft{
+    font-size: 14px !important;
+    margin: 10px 0 10px 0 !important;
+    font-weight: 600 !important;
+}

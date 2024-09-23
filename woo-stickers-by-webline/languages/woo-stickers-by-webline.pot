@@ -1,0 +1,434 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Language: \n"
+"POT-Creation-Date: 2019-03-19 10:17+0000\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: Loco https://localise.biz/"
+
+#: admin/class-woo-stickers-by-webline-admin.php:66
+#: admin/class-woo-stickers-by-webline-admin.php:1340
+msgid "WLI Woocommerce Stickers"
+msgstr ""
+
+#: admin/class-woo-stickers-by-webline-admin.php:84
+msgid "Stickers"
+msgstr ""
+
+#: admin/class-woo-stickers-by-webline-admin.php:123
+#: admin/class-woo-stickers-by-webline-admin.php:291
+#: admin/class-woo-stickers-by-webline-admin.php:451
+#: admin/class-woo-stickers-by-webline-admin.php:829
+msgid "New Products"
+msgstr ""
+
+#: admin/class-woo-stickers-by-webline-admin.php:124
+#: admin/class-woo-stickers-by-webline-admin.php:292
+#: admin/class-woo-stickers-by-webline-admin.php:452
+#: admin/class-woo-stickers-by-webline-admin.php:875
+msgid "Products On Sale"
+msgstr ""
+
+#: admin/class-woo-stickers-by-webline-admin.php:125
+#: admin/class-woo-stickers-by-webline-admin.php:293
+#: admin/class-woo-stickers-by-webline-admin.php:453
+#: admin/class-woo-stickers-by-webline-admin.php:913
+msgid "Soldout Products"
+msgstr ""
+
+#: admin/class-woo-stickers-by-webline-admin.php:133
+#: admin/class-woo-stickers-by-webline-admin.php:176
+#: admin/class-woo-stickers-by-webline-admin.php:212
+msgid "Enable Sticker:"
+msgstr ""
+
+#: admin/class-woo-stickers-by-webline-admin.php:134
+#: admin/class-woo-stickers-by-webline-admin.php:149
+#: admin/class-woo-stickers-by-webline-admin.php:157
+#: admin/class-woo-stickers-by-webline-admin.php:177
+#: admin/class-woo-stickers-by-webline-admin.php:185
+#: admin/class-woo-stickers-by-webline-admin.php:193
+#: admin/class-woo-stickers-by-webline-admin.php:213
+#: admin/class-woo-stickers-by-webline-admin.php:221
+#: admin/class-woo-stickers-by-webline-admin.php:229
+#: admin/class-woo-stickers-by-webline-admin.php:299
+#: admin/class-woo-stickers-by-webline-admin.php:311
+#: admin/class-woo-stickers-by-webline-admin.php:319
+#: admin/class-woo-stickers-by-webline-admin.php:338
+#: admin/class-woo-stickers-by-webline-admin.php:346
+#: admin/class-woo-stickers-by-webline-admin.php:354
+#: admin/class-woo-stickers-by-webline-admin.php:373
+#: admin/class-woo-stickers-by-webline-admin.php:381
+#: admin/class-woo-stickers-by-webline-admin.php:389
+#: admin/class-woo-stickers-by-webline-admin.php:460
+#: admin/class-woo-stickers-by-webline-admin.php:478
+#: admin/class-woo-stickers-by-webline-admin.php:490
+#: admin/class-woo-stickers-by-webline-admin.php:515
+#: admin/class-woo-stickers-by-webline-admin.php:527
+#: admin/class-woo-stickers-by-webline-admin.php:539
+#: admin/class-woo-stickers-by-webline-admin.php:564
+#: admin/class-woo-stickers-by-webline-admin.php:576
+#: admin/class-woo-stickers-by-webline-admin.php:588
+msgid "Default"
+msgstr ""
+
+#: admin/class-woo-stickers-by-webline-admin.php:134
+#: admin/class-woo-stickers-by-webline-admin.php:177
+#: admin/class-woo-stickers-by-webline-admin.php:213
+#: admin/class-woo-stickers-by-webline-admin.php:300
+#: admin/class-woo-stickers-by-webline-admin.php:339
+#: admin/class-woo-stickers-by-webline-admin.php:374
+#: admin/class-woo-stickers-by-webline-admin.php:461
+#: admin/class-woo-stickers-by-webline-admin.php:516
+#: admin/class-woo-stickers-by-webline-admin.php:565
+#: admin/class-woo-stickers-by-webline-admin.php:972
+#: admin/class-woo-stickers-by-webline-admin.php:991
+#: admin/class-woo-stickers-by-webline-admin.php:1010
+#: admin/class-woo-stickers-by-webline-admin.php:1030
+#: admin/class-woo-stickers-by-webline-admin.php:1145
+#: admin/class-woo-stickers-by-webline-admin.php:1238
+msgid "Yes"
+msgstr ""
+
+#: admin/class-woo-stickers-by-webline-admin.php:134
+#: admin/class-woo-stickers-by-webline-admin.php:177
+#: admin/class-woo-stickers-by-webline-admin.php:213
+#: admin/class-woo-stickers-by-webline-admin.php:301
+#: admin/class-woo-stickers-by-webline-admin.php:340
+#: admin/class-woo-stickers-by-webline-admin.php:375
+#: admin/class-woo-stickers-by-webline-admin.php:462
+#: admin/class-woo-stickers-by-webline-admin.php:517
+#: admin/class-woo-stickers-by-webline-admin.php:566
+#: admin/class-woo-stickers-by-webline-admin.php:974
+#: admin/class-woo-stickers-by-webline-admin.php:993
+#: admin/class-woo-stickers-by-webline-admin.php:1012
+#: admin/class-woo-stickers-by-webline-admin.php:1032
+#: admin/class-woo-stickers-by-webline-admin.php:1147
+#: admin/class-woo-stickers-by-webline-admin.php:1240
+msgid "No"
+msgstr ""
+
+#: admin/class-woo-stickers-by-webline-admin.php:140
+#: admin/class-woo-stickers-by-webline-admin.php:305
+#: admin/class-woo-stickers-by-webline-admin.php:467
+#: admin/class-woo-stickers-by-webline-admin.php:843
+msgid "Number of Days for New Product:"
+msgstr ""
+
+#: admin/class-woo-stickers-by-webline-admin.php:141
+msgid ""
+"Specify the No of days before to be display product as New, Leave empty if "
+"you want to take from global settings."
+msgstr ""
+
+#: admin/class-woo-stickers-by-webline-admin.php:148
+#: admin/class-woo-stickers-by-webline-admin.php:184
+#: admin/class-woo-stickers-by-webline-admin.php:220
+msgid "Sticker Position:"
+msgstr ""
+
+#: admin/class-woo-stickers-by-webline-admin.php:149
+#: admin/class-woo-stickers-by-webline-admin.php:185
+#: admin/class-woo-stickers-by-webline-admin.php:221
+#: admin/class-woo-stickers-by-webline-admin.php:312
+#: admin/class-woo-stickers-by-webline-admin.php:347
+#: admin/class-woo-stickers-by-webline-admin.php:382
+#: admin/class-woo-stickers-by-webline-admin.php:479
+#: admin/class-woo-stickers-by-webline-admin.php:528
+#: admin/class-woo-stickers-by-webline-admin.php:577
+#: admin/class-woo-stickers-by-webline-admin.php:1065
+#: admin/class-woo-stickers-by-webline-admin.php:1164
+#: admin/class-woo-stickers-by-webline-admin.php:1278
+msgid "Left"
+msgstr ""
+
+#: admin/class-woo-stickers-by-webline-admin.php:149
+#: admin/class-woo-stickers-by-webline-admin.php:185
+#: admin/class-woo-stickers-by-webline-admin.php:221
+#: admin/class-woo-stickers-by-webline-admin.php:313
+#: admin/class-woo-stickers-by-webline-admin.php:348
+#: admin/class-woo-stickers-by-webline-admin.php:383
+#: admin/class-woo-stickers-by-webline-admin.php:480
+#: admin/class-woo-stickers-by-webline-admin.php:529
+#: admin/class-woo-stickers-by-webline-admin.php:578
+#: admin/class-woo-stickers-by-webline-admin.php:1067
+#: admin/class-woo-stickers-by-webline-admin.php:1166
+#: admin/class-woo-stickers-by-webline-admin.php:1280
+msgid "Right"
+msgstr ""
+
+#: admin/class-woo-stickers-by-webline-admin.php:156
+#: admin/class-woo-stickers-by-webline-admin.php:192
+#: admin/class-woo-stickers-by-webline-admin.php:228
+#: admin/class-woo-stickers-by-webline-admin.php:317
+#: admin/class-woo-stickers-by-webline-admin.php:352
+#: admin/class-woo-stickers-by-webline-admin.php:387
+#: admin/class-woo-stickers-by-webline-admin.php:486
+#: admin/class-woo-stickers-by-webline-admin.php:535
+#: admin/class-woo-stickers-by-webline-admin.php:584
+msgid "Sticker Type:"
+msgstr ""
+
+#: admin/class-woo-stickers-by-webline-admin.php:157
+#: admin/class-woo-stickers-by-webline-admin.php:193
+#: admin/class-woo-stickers-by-webline-admin.php:229
+#: admin/class-woo-stickers-by-webline-admin.php:320
+#: admin/class-woo-stickers-by-webline-admin.php:355
+#: admin/class-woo-stickers-by-webline-admin.php:390
+#: admin/class-woo-stickers-by-webline-admin.php:491
+#: admin/class-woo-stickers-by-webline-admin.php:540
+#: admin/class-woo-stickers-by-webline-admin.php:589
+#: admin/class-woo-stickers-by-webline-admin.php:1125
+#: admin/class-woo-stickers-by-webline-admin.php:1183
+#: admin/class-woo-stickers-by-webline-admin.php:1258
+msgid "Ribbon"
+msgstr ""
+
+#: admin/class-woo-stickers-by-webline-admin.php:157
+#: admin/class-woo-stickers-by-webline-admin.php:193
+#: admin/class-woo-stickers-by-webline-admin.php:229
+#: admin/class-woo-stickers-by-webline-admin.php:321
+#: admin/class-woo-stickers-by-webline-admin.php:356
+#: admin/class-woo-stickers-by-webline-admin.php:391
+#: admin/class-woo-stickers-by-webline-admin.php:492
+#: admin/class-woo-stickers-by-webline-admin.php:541
+#: admin/class-woo-stickers-by-webline-admin.php:590
+#: admin/class-woo-stickers-by-webline-admin.php:1127
+#: admin/class-woo-stickers-by-webline-admin.php:1185
+#: admin/class-woo-stickers-by-webline-admin.php:1260
+msgid "Round"
+msgstr ""
+
+#: admin/class-woo-stickers-by-webline-admin.php:161
+#: admin/class-woo-stickers-by-webline-admin.php:197
+#: admin/class-woo-stickers-by-webline-admin.php:233
+#: admin/class-woo-stickers-by-webline-admin.php:325
+#: admin/class-woo-stickers-by-webline-admin.php:360
+#: admin/class-woo-stickers-by-webline-admin.php:395
+#: admin/class-woo-stickers-by-webline-admin.php:498
+#: admin/class-woo-stickers-by-webline-admin.php:547
+#: admin/class-woo-stickers-by-webline-admin.php:596
+#: admin/class-woo-stickers-by-webline-admin.php:859
+#: admin/class-woo-stickers-by-webline-admin.php:898
+#: admin/class-woo-stickers-by-webline-admin.php:936
+msgid "Add your custom sticker:"
+msgstr ""
+
+#: admin/class-woo-stickers-by-webline-admin.php:165
+#: admin/class-woo-stickers-by-webline-admin.php:201
+#: admin/class-woo-stickers-by-webline-admin.php:237
+#: admin/class-woo-stickers-by-webline-admin.php:329
+#: admin/class-woo-stickers-by-webline-admin.php:364
+#: admin/class-woo-stickers-by-webline-admin.php:399
+#: admin/class-woo-stickers-by-webline-admin.php:504
+#: admin/class-woo-stickers-by-webline-admin.php:553
+#: admin/class-woo-stickers-by-webline-admin.php:602
+msgid "Upload/Add image"
+msgstr ""
+
+#: admin/class-woo-stickers-by-webline-admin.php:166
+#: admin/class-woo-stickers-by-webline-admin.php:202
+#: admin/class-woo-stickers-by-webline-admin.php:238
+#: admin/class-woo-stickers-by-webline-admin.php:330
+#: admin/class-woo-stickers-by-webline-admin.php:365
+#: admin/class-woo-stickers-by-webline-admin.php:400
+#: admin/class-woo-stickers-by-webline-admin.php:505
+#: admin/class-woo-stickers-by-webline-admin.php:554
+#: admin/class-woo-stickers-by-webline-admin.php:603
+msgid "Remove image"
+msgstr ""
+
+#: admin/class-woo-stickers-by-webline-admin.php:297
+#: admin/class-woo-stickers-by-webline-admin.php:336
+#: admin/class-woo-stickers-by-webline-admin.php:371
+#: admin/class-woo-stickers-by-webline-admin.php:457
+#: admin/class-woo-stickers-by-webline-admin.php:512
+#: admin/class-woo-stickers-by-webline-admin.php:561
+#: admin/class-woo-stickers-by-webline-admin.php:802
+#: admin/class-woo-stickers-by-webline-admin.php:838
+#: admin/class-woo-stickers-by-webline-admin.php:883
+#: admin/class-woo-stickers-by-webline-admin.php:921
+msgid "Enable Product Sticker:"
+msgstr ""
+
+#: admin/class-woo-stickers-by-webline-admin.php:309
+#: admin/class-woo-stickers-by-webline-admin.php:344
+#: admin/class-woo-stickers-by-webline-admin.php:379
+#: admin/class-woo-stickers-by-webline-admin.php:474
+#: admin/class-woo-stickers-by-webline-admin.php:523
+#: admin/class-woo-stickers-by-webline-admin.php:572
+#: admin/class-woo-stickers-by-webline-admin.php:849
+#: admin/class-woo-stickers-by-webline-admin.php:888
+#: admin/class-woo-stickers-by-webline-admin.php:926
+msgid "Product Sticker Position:"
+msgstr ""
+
+#: admin/class-woo-stickers-by-webline-admin.php:713
+msgid "Choose an image"
+msgstr ""
+
+#: admin/class-woo-stickers-by-webline-admin.php:714
+msgid "Use image"
+msgstr ""
+
+#: admin/class-woo-stickers-by-webline-admin.php:729
+msgid "Settings"
+msgstr ""
+
+#: admin/class-woo-stickers-by-webline-admin.php:794
+msgid "General"
+msgstr ""
+
+#: admin/class-woo-stickers-by-webline-admin.php:797
+msgid "General Plugin Settings"
+msgstr ""
+
+#: admin/class-woo-stickers-by-webline-admin.php:807
+msgid "Enable Sticker On Product Listing Page:"
+msgstr ""
+
+#: admin/class-woo-stickers-by-webline-admin.php:812
+msgid "Enable Sticker On Product Details Page:"
+msgstr ""
+
+#: admin/class-woo-stickers-by-webline-admin.php:833
+msgid "Sticker Configurations for New Products"
+msgstr ""
+
+#: admin/class-woo-stickers-by-webline-admin.php:854
+msgid "Enable Sticker On New Product:"
+msgstr ""
+
+#: admin/class-woo-stickers-by-webline-admin.php:878
+msgid "Sticker Configurations for Products On Sale"
+msgstr ""
+
+#: admin/class-woo-stickers-by-webline-admin.php:893
+msgid "Enable Sticker On Sale Product:"
+msgstr ""
+
+#: admin/class-woo-stickers-by-webline-admin.php:916
+msgid "Sticker Configurations for Soldout Products"
+msgstr ""
+
+#: admin/class-woo-stickers-by-webline-admin.php:931
+msgid "Enable Sticker On Sold Product:"
+msgstr ""
+
+#: admin/class-woo-stickers-by-webline-admin.php:976
+msgid "Select wether you want to enable sticker feature or not."
+msgstr ""
+
+#: admin/class-woo-stickers-by-webline-admin.php:995
+msgid ""
+"Select wether you want to enable sticker feature on product listing page or "
+"not."
+msgstr ""
+
+#: admin/class-woo-stickers-by-webline-admin.php:1014
+msgid ""
+"Select wether you want to enable sticker feature on product detail page or "
+"not."
+msgstr ""
+
+#: admin/class-woo-stickers-by-webline-admin.php:1034
+msgid ""
+"Control sticker display for products which are marked as NEW in wooCommerce."
+msgstr ""
+
+#: admin/class-woo-stickers-by-webline-admin.php:1049
+msgid ""
+"Specify the No of days before to be display product as New (Default 10 days)."
+msgstr ""
+
+#: admin/class-woo-stickers-by-webline-admin.php:1069
+#: admin/class-woo-stickers-by-webline-admin.php:1168
+#: admin/class-woo-stickers-by-webline-admin.php:1282
+msgid "Select the position of the sticker."
+msgstr ""
+
+#: admin/class-woo-stickers-by-webline-admin.php:1105
+#: admin/class-woo-stickers-by-webline-admin.php:1220
+#: admin/class-woo-stickers-by-webline-admin.php:1314
+msgid "Upload Image"
+msgstr ""
+
+#: admin/class-woo-stickers-by-webline-admin.php:1106
+#: admin/class-woo-stickers-by-webline-admin.php:1221
+#: admin/class-woo-stickers-by-webline-admin.php:1315
+msgid "Remove Image"
+msgstr ""
+
+#: admin/class-woo-stickers-by-webline-admin.php:1109
+msgid "Add your own custom new product image instead of WooStickers default."
+msgstr ""
+
+#: admin/class-woo-stickers-by-webline-admin.php:1129
+msgid "Select sticker type to show on New Products."
+msgstr ""
+
+#: admin/class-woo-stickers-by-webline-admin.php:1149
+msgid ""
+"Control sticker display for products which are marked as under sale in "
+"wooCommerce."
+msgstr ""
+
+#: admin/class-woo-stickers-by-webline-admin.php:1187
+msgid "Select sticker type to show on Products under sale."
+msgstr ""
+
+#: admin/class-woo-stickers-by-webline-admin.php:1223
+msgid "Add your own custom sale product image instead of WooStickers default."
+msgstr ""
+
+#: admin/class-woo-stickers-by-webline-admin.php:1242
+msgid ""
+"Control sticker display for products which are marked as under sold in "
+"wooCommerce."
+msgstr ""
+
+#: admin/class-woo-stickers-by-webline-admin.php:1262
+msgid "Select sticker type to show on Products under sold."
+msgstr ""
+
+#: admin/class-woo-stickers-by-webline-admin.php:1317
+msgid "Add your own custom sold product image instead of WooStickers default."
+msgstr ""
+
+#: admin/class-woo-stickers-by-webline-admin.php:1340
+msgid "WOO Stickers"
+msgstr ""
+
+#: public/class-woo-stickers-by-webline-public.php:380
+#: public/class-woo-stickers-by-webline-public.php:383
+msgid "Sale"
+msgstr ""
+
+#: public/class-woo-stickers-by-webline-public.php:439
+#: public/class-woo-stickers-by-webline-public.php:442
+#: public/class-woo-stickers-by-webline-public.php:455
+#: public/class-woo-stickers-by-webline-public.php:458
+msgid "Sold Out"
+msgstr ""
+
+#. Name of the plugin
+msgid "Woo Stickers by Webline"
+msgstr ""
+
+#. Description of the plugin
+msgid ""
+"Product sticker extension to improve customer experience while shopping by "
+"providing stickers for New products, On Sale products, Soldout Products "
+"which is easily configure from admin panel without any extra developer "
+"efforts."
+msgstr ""
+
+#. URI of the plugin
+#. Author URI of the plugin
+msgid "http://www.weblineindia.com"
+msgstr ""
+
+#. Author of the plugin
+msgid "Weblineindia"
+msgstr ""

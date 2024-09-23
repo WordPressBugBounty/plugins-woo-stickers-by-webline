@@ -1,0 +1,629 @@
+/* CTA section CSS Start */
+
+.wosbw-admin-notice {
+    position: relative;
+}
+
+.wosbw-admin-notice .wosbw_customize_remind_later {
+    position: absolute;
+    top: 16px;
+    right: 12px;
+    background:none;
+}
+
+
+.wosbw-plugin-cta-wrap {
+	padding: 10px 20px 25px 20px;
+	border: 1px solid #ccc;
+	background-color: #fff;
+	margin-top: 10px;
+}
+
+.wosbw-plugin-cta-wrap .head {
+    font-size: 20px;
+    font-weight: normal;
+    margin: 1em 0;
+
+}
+
+.wosbw-plugin-cta-wrap .button {
+    padding: 5px 20px;
+    margin-right: 10px;
+}
+
+.wosbw-plugin-cta-upgrade {
+    position: relative;
+    margin: 0px 0 15px;
+    border-left-color: #f0b849 !important;
+    background: #fff;
+    border: 1px solid #ccd0d4;
+    border-left-width: 4px;
+    box-shadow: 0 1px 1px rgba(0,0,0,.04);
+    padding: 1px 15px;
+}
+
+.wosbw-plugin-cta-upgrade .note {
+	margin: 8px 0;
+	max-width: 75%;
+}
+
+.wosbw-plugin-cta-upgrade .note::before, .wliplugin-cta-cta-upgrade .note::before {
+	content: url("../images/logo.png");
+	vertical-align: middle;
+	margin-right: 12px;
+}
+
+.wosbw-plugin-cta-upgrade .button {
+    position: absolute;
+    top: calc(50% - 15px);
+    right: 25px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 767px) {
+    .wosbw-plugin-cta-wrap .button {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    .wosbw-plugin-cta-upgrade .note {
+        max-width: 100%;
+    }
+    .wosbw-plugin-cta-upgrade .button {
+        position: static;
+    }
+    .wosbw-plugin-cta-upgrade {
+        padding: 10px 15px;
+    }
+}
+
+.notice .wosbw-plugin-cta-wrap {
+	padding: 0px 0px 10px 6px;
+    border: 1px solid #ccc;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+	background-color: #fff;
+	margin-top: 10px;
+}
+
+.notice .wosbw-customize-text{
+    padding: 10px 0px 0px 0px;
+    border: 1px solid #ccc;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+}
+
+.notice .wosbw-rating-text{
+    padding: 10px 0px 0px 0px;
+}
+
+.wrap-wosbw .inner-wosbw .left-box-wosbw{
+    padding-right: 30px;
+    width: calc(100% - 450px);
+}
+.wrap-wosbw .inner-wosbw .right-box-wosbw{
+    width: 400px;
+    position: fixed;
+    top: 50px;
+    right: 5px;
+    z-index: 1000;
+}
+
+.wosbw-plugin-cta{
+    padding: 15px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    margin-bottom: 15px;
+}
+.wosbw-plugin-cta .wosbw-heading{
+    font-size: 18px;
+    line-height:1.2;
+    margin: 0 0 10px 0;
+    padding: 0;
+}
+.wosbw-plugin-cta p{
+    font-size: 14px;
+    margin: 0 0 15px 0;
+    padding: 0;
+}
+.wosbw-plugin-cta .button{
+    margin-bottom: 10px;
+}
+
+.wosbw-plugin-cta.upgrade{
+    background-color: #fdb930;
+    text-align: center;
+    border: 0;
+}
+.wosbw-plugin-cta.upgrade p{
+    color: #000;
+    font-weight: 450;
+    font-size: 16px;
+}
+.wosbw-plugin-cta.upgrade .button{
+    background-color: #262626;
+    box-shadow: 0 4px 0 #7f7f7f;
+    color: #fff;
+    transition: all .2s ease-in-out;
+    font-size: 15px;
+    font-weight: 700;
+    text-align: center;
+    line-height: 1;
+    height: auto;
+    padding: 10px 15px;
+    min-width: 160px;
+    text-transform: uppercase;
+}
+
+@media screen and (max-width: 1366px) {
+    .wrap-wosbw .inner-wosbw .left-box-wosbw{
+        width: calc(100% - 350px);
+    }
+    .wrap-wosbw .inner-wosbw .right-box-wosbw{
+        width: 300px;
+    }
+}
+
+@media screen and (max-width: 1023px) {
+    .wrap-wosbw .inner-wosbw .left-box-wosbw{
+        width: 100%;
+        box-sizing: border-box;
+        padding-right: 0;
+    }
+    .wrap-wosbw .inner-wosbw .right-box-wosbw{
+        position: static;
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+/* Pro Banner CSS Start */
+
+ .wosbw-pro-ribbon-banner {
+    padding: 16px 20px 24px;
+    border-radius: 6px;
+    border: 1px solid #d6d6d6;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+    padding-left: 60px;
+    position: relative;
+    background-color: #fff;
+    border-top: 3px solid #FDB930;
+    max-width: 700px;
+}
+@media (max-width: 768px) {
+    .wosbw-pro-ribbon-banner {
+        margin-top: 22px;
+    }
+}
+
+ .wosbw-pro-ribbon-banner .file-input {
+    display: flex;
+    align-items: end;
+    gap: 3px;
+    margin-bottom: 10px;
+}
+
+.wosbw-pro-ribbon-banner p.description {
+    margin-top: 10px;
+}
+
+ .wosbw-pro-ribbon-banner .ribbon {
+    position: absolute;
+    left: -7px;
+    top: -9.5px;
+}
+ .wosbw-pro-ribbon-banner .ribbon svg {
+    height: 60px;
+    width: auto;
+}
+.wosbw-pro-ribbon-banner .learn-more {
+    margin-top: 20px;
+}
+
+/* Pro Banner CSS End */
+
+#wosbw-dynamic-link{
+    padding: 11px 17px 11px 17px;
+	border-right: 1px solid  #d7d7d7;
+}
+
+.link{
+    display: flex;
+	align-items: center;
+    margin-top: 20px;
+}
+
+#wosbw-copy-button{
+    margin-left: 12px;
+	margin-right: 12px;
+    cursor: pointer;
+}
+.copied-message{
+    position: absolute;
+    left: 91%;
+    bottom: 131%;
+    width: 70px;
+    background-color: #3d3d3d;
+    padding: 8px 10px;
+    border-radius: 3px;
+    color: #fff !important;
+}
+.copied-message::after {
+    content: "";
+    position: absolute;
+    top: 100%; /* Arrow at the bottom */
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #3d3d3d transparent transparent transparent;
+}
+
+
+
+
+/* CSS Updates start (22/5/2024) */
+.wosbw-plans h2 {
+	font-size: 32px;
+	margin-bottom: 22px;
+}
+.wosbw-plans p.wosbw-plans-p {
+	font-size: 16px !important;
+    font-weight: 600;
+	margin-top: 0 !important;
+	margin-bottom: 20px !important;
+    padding-bottom: 20px;
+}
+.wosbw-plans-form {
+	margin-top: 40px;
+}
+.wosbw-pricing-cards {
+	display: flex;
+	gap: 20px;
+}
+.wosbw-pricing-card{
+    height: 60px;
+    width: 190px;
+    position: relative;
+}
+.wosbw-plans input[type="radio"]{
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: white;
+    height: 100%;
+    width: 100%;
+    border-radius: 6px;
+	border-color: #2271b1;
+    position: absolute;
+    cursor: pointer;
+    outline: none;
+}
+.wosbw-plans input[type="radio"]:before{
+    content: "";
+    position: absolute;
+    height: 22px;
+    width: 22px;
+    background-color: #f9fafd;
+    border: 1px solid #cee8ff;
+    border-radius: 50%;
+    top: 19px;
+    right: 12px;
+}
+input[type="radio"]:after{
+    content: "";
+    position: absolute;
+    height: 14px;
+    width: 14px;
+    background-color: transparent;
+    border-radius: 50%;
+    top: 22.5px;
+    right: 16.5px;
+}
+@media (max-width:782px) {
+    input[type="radio"]:after {        
+        top: 26.5px;
+        right: 28px;
+    }
+}
+.wosbw-plans input[type="radio"]:checked{
+    border: 2px solid #2271b1;
+}
+.wosbw-plans input[type="radio"]:checked:after{
+    background-color: #2271b1;
+}
+.wosbw-plans input[type="radio"]:checked:before {
+	background: transparent;
+	height: 22px;
+	width: 22px;
+	position: absolute;
+	top: 14.9px;
+	right: 8.5px;
+}
+.wosbw-plan-lable{
+    position: absolute;
+    margin: 18px 0 14px 14px;
+    cursor: pointer;
+	font-weight: 600;
+    font-size: 18px;
+    letter-spacing: 0.5px;
+}
+table.free-table-data {
+	background-color: #fff;
+	border-radius: 6px;
+	padding: 10px 20px;
+	margin-top: 10px;
+	box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+	width: 87%;
+}
+table.free-table-data .content th,
+table.free-table-data .content td{
+	border-bottom: 1px solid #E8E8EB;
+}
+
+
+
+
+
+.wosbw-copy-link-box {
+	background-color: #f9f9fa;
+	border: 1px solid #d7d7d7;
+	border-radius: 6px;
+    position: relative;
+    width: fit-content;
+}
+.wosbw-copy-link-box .wosbw-copy-btn {
+    display: flex;
+}
+/* CSS Updates end (22/5/2024) */
+
+/* New CSS by 23/5/2024 start*/
+.content {
+	background-color: #fff;
+	border-radius: 6px;
+	padding: 20px;
+	margin-top: 10px;
+	box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    /* border-top: 3px solid #FDB930; */
+}
+
+.border-bottom {
+	border-bottom: 1px solid #E8E8EB;
+}
+.content .content-inside {
+	display: flex;
+	padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+.content .content-inside1 {
+    display: flex;
+    align-items: center;
+}
+
+.content .content-inside .wosbw-left-title,
+.content .content-inside1 .wosbw-left-title {
+	width: 140px;
+}
+.content .content-inside .wosbw-left-title p,
+.content .content-inside1 .wosbw-left-title p {
+	margin: 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: #202020;
+}
+.content .content-inside1 .wosbw-right-des ul {
+    margin: 0;
+    display: flex;
+    gap: 20px;
+}
+.content .content-inside1 .wosbw-right-des ul li {
+    padding: 10px 16px;
+    border-radius: 6px;
+    color: #262626;
+    background-color: #fffbf3;
+    border: 0.5px solid #ffeecb;
+    font-weight: 600;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 0;
+}
+.content .content-inside .wosbw-right-des p:first-child {
+	font-size: 14px;
+	margin: 0 0 10px 0;
+    font-weight: 600;
+}
+.content .content-inside .wosbw-right-des .select-page {
+    min-width: 150px;
+}
+.free-table-data select {
+	min-height: 40px;
+    border-color: #d7d7d7;
+    border-radius: 6px;
+}
+.validate-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+/* New CSS by 23/5/2024 end*/
+
+/* Pop Up Box CSS start */
+
+.pop-up-box, .pop-up-box-upgrade {
+    position: absolute;
+    top: 27%;
+    left: 0;
+    transform: translateX(50%);
+    width: 670px;
+}
+
+.pop-up-box-upgrade .pop-up-table, 
+.pop-up-box .pop-up-table  {
+    padding: 30px 30px 50px 30px;
+    background-color: #fff !important;
+    border: 1px solid #ebebeb;
+    border-radius: 6px;
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+}
+.pop-up-box-upgrade .pop-up-table td h3, 
+.pop-up-box .pop-up-table td h3{
+    margin-top: 0;
+    font-size: 18px;
+}
+.pop-up-box .pop-up-table .strip, 
+.pop-up-box-upgrade .pop-up-table .strip {
+    padding: 10px 12px;
+    background-color: #fffbf4;
+    border: 1px solid #FDB930;
+    border-radius: 6px;
+    font-size: 14px;
+    width: 41%;
+    margin: 0 auto;
+}
+.pop-up-box .pop-up-table td.description,
+.pop-up-box-upgrade .pop-up-table td.description {
+    font-size: 16px;
+    padding: 10px 0;
+    line-height: 1.5;
+    text-align: center;
+}
+.pop-up-box .pop-up-table .features-row,
+.pop-up-box-upgrade .pop-up-table .features-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+}
+.pop-up-box .pop-up-table td.features,
+.pop-up-box-upgrade .pop-up-table td.features {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.pop-up-box .pop-up-table td.features p,
+.pop-up-box-upgrade .pop-up-table td.features p {
+    font-size: 14px;
+}
+.pop-up-box .pop-up-table tr td a.unlock-featues,
+.pop-up-box-upgrade .pop-up-table tr td a.unlock-featues {
+    padding: 12px 20px;
+    background-color: #282928;
+    color: #ffffff;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+}
+.pop-up-box .pop-up-table tr.unlock-row,
+.pop-up-box-upgrade .pop-up-table tr.unlock-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    margin-top: 50px;
+}
+/* Pop Up Box CSS end */
+
+/* CSS for close button */
+.close-popup-wosbw {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+}
+
+/* Optional styling for close button */
+.close-popup-wosbw:hover {
+    color: red; /* Change color on hover */
+    outline: none; /* Remove default focus outline */
+}
+
+
+.wosbw-pro-ribbon-banner {
+    padding: 16px 20px 24px;
+    border-radius: 6px;
+    border: 1px solid #d6d6d6;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+    padding-left: 60px;
+    position: relative;
+    background-color: #fff;
+    border-top: 3px solid #FDB930;
+    max-width: 700px;
+}
+@media (max-width: 768px) {
+    .wosbw-pro-ribbon-banner {
+        margin-top: 22px;
+    }
+}
+
+.wosbw-pro-ribbon-banner .file-input {
+    display: flex;
+    align-items: end;
+    gap: 3px;
+    margin-bottom: 10px;
+}
+
+.wosbw-pro-ribbon-banner p.description {
+    margin-top: 10px;
+}
+
+.wosbw-pro-ribbon-banner .ribbon {
+    position: absolute;
+    left: -7px;
+    top: -9.5px;
+}
+.wosbw-pro-ribbon-banner .ribbon svg {
+    height: 60px;
+    width: auto;
+}
+.wosbw-pro-ribbon-banner .learn-more {
+    margin-top: 20px;
+}
+
+.custom-p-field {
+    padding: 5px 20px 5px 162px !important;
+    margin-top: 30px;
+}
+.custom-p-field label {
+    width: 145px !important;
+}
+.custom-p-field .wosbw-pro-ribbon-banner {
+    display: flex;
+    flex-direction: column;
+}
+.custom-p-field .wosbw-pro-ribbon-banner input {
+    width: 70px !important;
+}
+.custom-p-field .wosbw-pro-ribbon-banner .learn-more {
+    margin-top: 6px;
+}
+
+.term-thumbnail-wrap {
+    margin-top: 14px;
+}
+
+.loader{
+    display: none;
+}
+.loader .spinner {
+    visibility: visible;
+    float: left;
+}
+.wli-form-general .disabled, .disabled input, .disabled button, input.disabled {
+    pointer-events: none;
+   
+}
+.disabled input, .disabled select , .disabled .wp-picker-container, .disabled button{
+   
+    background: rgba(255, 255, 255, .5) !important;
+    border-color: rgba(220, 220, 222, .75) !important;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, .04) !important;
+    color: rgba(44, 51, 56, .5) !important;
+}
