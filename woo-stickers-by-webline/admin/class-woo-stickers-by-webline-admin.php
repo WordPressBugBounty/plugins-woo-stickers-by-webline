@@ -11664,15 +11664,31 @@ class Woo_Stickers_By_Webline_Admin {
 										</p>
 										<?php
 											$keyword_options = array(
-												"custom software development" => "https://www.weblineindia.com/",
+												"ecommerce development company" => "https://www.weblineindia.com/ecommerce-development.html",
+												"ecommerce website development agency" => "https://www.weblineindia.com/ecommerce-development.html",
+												"ecommerce development agency" => "https://www.weblineindia.com/ecommerce-development.html",
+												"ecommerce website development services" => "https://www.weblineindia.com/ecommerce-development.html",
+												"hire ecommerce developers" => "https://www.weblineindia.com/hire-ecommerce-developers.html",
+												"cms website development" => "https://www.weblineindia.com/cms-development.html",
+												"cms development services" => "https://www.weblineindia.com/cms-development.html",
+												"cms development company" => "https://www.weblineindia.com/cms-development.html",
+												"wordpress development services" => "https://www.weblineindia.com/wordpress-development.html",
+												"wordpress web development company" => "https://www.weblineindia.com/wordpress-development.html",
+												"wordpress development company" => "https://www.weblineindia.com/wordpress-development.html",
+												"custom wordpress development services" => "https://www.weblineindia.com/wordpress-development.html",
+												"software maintenance services" => "https://www.weblineindia.com/software-maintenance-services.html",
+												"software maintenance company" => "https://www.weblineindia.com/software-maintenance-services.html",
+												"custom software development" => "https://www.weblineindia.com/custom-software-development.html",
+												"software development outsourcing" => "https://www.weblineindia.com",
+												"offshore software development" => "https://www.weblineindia.com",
+												"software development services" => "https://www.weblineindia.com/custom-software-development.html",
 												"offshore software development company" => "https://www.weblineindia.com/about-us.html",
 												"ai software development" => "https://www.weblineindia.com/ai-development.html",
-												"software development outsourcing company" => "https://www.weblineindia.com/about-us.html",
-												"software development outsourcing" => "https://www.weblineindia.com/",
-												"offshore software development" => "https://www.weblineindia.com/",
-												"software development services" => "https://www.weblineindia.com/",
 												"hire software developers" => "https://www.weblineindia.com/hire-dedicated-developers.html",
-												"hire software programmers" => "https://www.weblineindia.com/hire-dedicated-developers.html"
+												"hire software programmers" => "https://www.weblineindia.com/hire-dedicated-developers.html",
+												"hire wordpress developers" => "https://www.weblineindia.com/contact-us.html",
+												"best wordpress developer" => "https://www.weblineindia.com/contact-us.html",
+												"hire wordpress experts" => "https://www.weblineindia.com/contact-us.html"
 											);
 
 											$saved_keyword = get_option('wosbw_saved_keyword');											
@@ -11683,7 +11699,9 @@ class Woo_Stickers_By_Webline_Admin {
 											
 										?>
 										<select id="wosbw_saved_keyword" name="wosbw_saved_keyword" class="wosbw-select-item">
-											<?php foreach ($keyword_options as $text => $value):
+											<?php 
+											$selected = '';
+											foreach ($keyword_options as $text => $value):
 												if(isset($saved_keyword) && !empty($saved_keyword)){
 													if($saved_keyword == $text){
 														$selected = 'selected=selected';

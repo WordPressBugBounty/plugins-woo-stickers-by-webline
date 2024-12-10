@@ -16,7 +16,7 @@
  * Plugin Name:       Woo Stickers by Webline
  * Plugin URI:        http://www.weblineindia.com
  * Description:       Product sticker extension to improve customer experience while shopping by providing stickers for New products, On Sale products, Soldout Products which is easily configure from admin panel without any extra developer efforts.
- * Version:           1.2.3
+ * Version:           1.2.4
  * Author:            Weblineindia
  * Author URI:        http://www.weblineindia.com
  * License:           GPL-2.0+
@@ -36,7 +36,7 @@ if ( ! defined( 'WPINC' ) ) {
 
 if (in_array ( 'woocommerce/woocommerce.php', apply_filters ( 'active_plugins', get_option ( 'active_plugins' ) ) )) {
 
-define ( 'WS_VERSION', '1.2.3' );
+define ( 'WS_VERSION', '1.2.4' );
 define ( 'WS_OPTION_NAME', 'WS_settings' );
 define ( 'WS_PLUGIN_FILE', basename ( __FILE__ ) );
 define('WOSBW_DIR', plugin_dir_path(__FILE__));
