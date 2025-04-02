@@ -3,7 +3,7 @@ Contributors: weblineindia
 Tags: woocommerce stickers, woocommerce products stickers, product stickers, category stickers, product badge, woocommerce product badge, custom product badge, sitcker animation, scheduled sticker
 Requires at least: 3.5
 Tested up to: 6.7
-Stable tag: 1.2.4
+Stable tag: 1.2.5
 License: GPLv2 or later
 
 Enhance your buyer's shopping experience by adding various stickers to your products in your WooCommerce Shop. Various stickers are available like stickers for New, On Sale, Soldout Products, Category Stickers and you can use your custom stickers.
@@ -101,6 +101,12 @@ If you notice the Sold badge from the default theme or WooCommerce appearing rep
 This will hide the duplicate Sold badge.
 
 == Changelog ==
+
+= 1.2.5 =
+
+Release Date: April 2, 2025
+
+* Fix: Checked compatibility with WordPress version 6.7.2
 
 = 1.2.4 =
 
