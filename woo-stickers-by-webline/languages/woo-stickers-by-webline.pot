@@ -397,7 +397,7 @@ msgid "Add your own custom sold product image instead of WooStickers default."
 msgstr ""
 
 #: admin/class-woo-stickers-by-webline-admin.php:1340
-msgid "WOO Stickers"
+msgid "Stickers for WooCommerce by Webline"
 msgstr ""
 
 #: public/class-woo-stickers-by-webline-public.php:380
@@ -413,7 +413,7 @@ msgid "Sold Out"
 msgstr ""
 
 #. Name of the plugin
-msgid "Woo Stickers by Webline"
+msgid "Stickers for WooCommerce by Webline"
 msgstr ""
 
 #. Description of the plugin

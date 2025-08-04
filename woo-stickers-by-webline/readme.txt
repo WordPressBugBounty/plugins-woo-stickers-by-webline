@@ -1,9 +1,9 @@
-=== WOO Stickers by Webline ===
+=== Stickers for WooCommerce by Webline ===
 Contributors: weblineindia
 Tags: woocommerce stickers, woocommerce products stickers, product stickers, category stickers, product badge, woocommerce product badge, custom product badge, sitcker animation, scheduled sticker
 Requires at least: 3.5
 Tested up to: 6.7
-Stable tag: 1.2.5
+Stable tag: 1.2.6
 License: GPLv2 or later
 
 Enhance your buyer's shopping experience by adding various stickers to your products in your WooCommerce Shop. Various stickers are available like stickers for New, On Sale, Soldout Products, Category Stickers and you can use your custom stickers.
@@ -54,15 +54,15 @@ If you like this plugin then please rate our plugin to help us spread the word.
 3. The Text sticker of New and On Sale product on detail page.
 4. The Text sticker of product setup as custom type on detail page.
 5. The Category Sticker on frontend.
-6. WOO Stickers menu in admin side under Settings.
+6. Stickers for WooCommerce menu in admin side under Settings.
 7. General Configuration of WooStickers Plugin.
 8. New Product Configuration of WooStickers Plugin.
 9. Sale Configuration of WooStickers Plugin.
 10. Sale Configuration with default image option of WooStickers Plugin.
 11. Sold Configuration of WooStickers Plugin.
 12. Custom Sticker Configuration of WooStickers Plugin.
-13. Woo Stickers Configuration on Category level.
-14. Woo Stickers Configuration on Product level.
+13. Stickers for WooCommerce Configuration on Category level.
+14. Stickers for WooCommerce by Webline Configuration on Product level.
 15. Category Stickers Configuration.
 
 
@@ -101,6 +101,13 @@ If you notice the Sold badge from the default theme or WooCommerce appearing rep
 This will hide the duplicate Sold badge.
 
 == Changelog ==
+
+= 1.2.6 =
+
+Release Date: August 4, 2025
+
+* Fix: Checked compatibility with WordPress version 6.8.2
+* Changed name for the plugin
 
 = 1.2.5 =
 

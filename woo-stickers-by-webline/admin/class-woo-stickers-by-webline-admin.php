@@ -11241,14 +11241,14 @@ class Woo_Stickers_By_Webline_Admin {
 		 * class.
 		 */
 
-		// add_options_page ( __( 'WLI Woocommerce Stickers', 'woo-stickers-by-webline' ), __( 'WOO Stickers', 'woo-stickers-by-webline' ), 'manage_options', $this->plugin_options_key, array (
+		// add_options_page ( __( 'WLI Woocommerce Stickers', 'woo-stickers-by-webline' ), __( 'Stickers for WooCommerce by Webline', 'woo-stickers-by-webline' ), 'manage_options', $this->plugin_options_key, array (
 		// 		&$this,
 		// 		'plugin_options_page' 
 		// ) );
 
 		add_menu_page(
 			__( 'WLI Woocommerce Stickers', 'woo-stickers-by-webline' ), 
-			__( 'WOO Stickers', 'woo-stickers-by-webline' ), 
+			__( 'Stickers for WooCommerce', 'woo-stickers-by-webline' ), 
 			'manage_options', 
 			$this->plugin_options_key, 
 			array( &$this, 'plugin_options_page' ),
@@ -11274,7 +11274,7 @@ class Woo_Stickers_By_Webline_Admin {
 		<div class="wrap-wosbw">
 			<div class="inner-wosbw">
 				<div class="left-box-wosbw">
-				<h2><?php _e( 'WOO Stickers by Webline - Configuration Settings', 'woo-stickers-by-webline' );?></h2>
+				<h2><?php _e( 'Stickers for WooCommerce by Webline - Configuration Settings', 'woo-stickers-by-webline' );?></h2>
 				<?php $this->plugin_options_tabs(); ?>
 				<form class="wli-form-general" method="post" action="options.php">
 					<?php wp_nonce_field( 'update-options' ); ?>
@@ -11500,7 +11500,7 @@ class Woo_Stickers_By_Webline_Admin {
 	public function cta_section_callback() {
 		?>
 		<div class="wosbw-plugin-cta">
-			<h2 class="wosbw-heading">Thank you for downloading our plugin - Woo Stickers by Webline.</h2>
+			<h2 class="wosbw-heading">Thank you for downloading our plugin - Stickers for WooCommerce by Webline.</h2>
 			<h2 class="wosbw-heading">We're here to help !</h2>
 			<p>Our plugin comes with free, basic support for all users. We also provide plugin customization in case you want to customize our plugin to suit your needs.</p>
 			<a href="https://www.weblineindia.com/contact-us.html?utm_source=WP-Plugin&utm_medium=Woo%20Stickers&utm_campaign=Free%20Support" target="_blank" class="button">Need help?</a>
@@ -11553,7 +11553,7 @@ class Woo_Stickers_By_Webline_Admin {
 					),
 				)
 			),
-			'<strong>"WOO Stickers by Webline"</strong>',
+			'<strong>"Stickers for WooCommerce by Webline"</strong>',
 			$url,
 			$url,
 			$wpdev_url
