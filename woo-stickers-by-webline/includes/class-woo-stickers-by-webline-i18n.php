@@ -6,7 +6,7 @@
  * Loads and defines the internationalization files for this plugin
  * so that it is ready for translation.
  *
- * @link       http://www.weblineindia.com
+ * @link       https://www.weblineindia.com
  * @since      1.0.0
  *
  * @package    Woo_Stickers_By_Webline

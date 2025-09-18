@@ -5,7 +5,7 @@
  *
  * This file is used to markup the admin-facing aspects of the plugin.
  *
- * @link       http://www.weblineindia.com
+ * @link       https://www.weblineindia.com
  * @since      1.0.0
  *
  * @package    Woo_Stickers_By_Webline

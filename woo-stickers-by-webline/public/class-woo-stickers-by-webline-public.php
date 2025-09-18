@@ -3,7 +3,7 @@
 /**
  * The public-facing functionality of the plugin.
  *
- * @link       http://www.weblineindia.com
+ * @link       https://www.weblineindia.com
  * @since      1.0.0
  *
  * @package    Woo_Stickers_By_Webline
@@ -205,6 +205,7 @@ class Woo_Stickers_By_Webline_Public {
 		$enable_np_sticker 	= get_post_meta( $id, '_enable_np_sticker', true );
 		if( $enable_np_sticker == 'yes' ) {
 			$settings['enable_new_product_sticker'] = 'yes';
+			$np_no_of_days = get_post_meta( $id, '_np_no_of_days', true );
 			$settings['new_product_sticker_days'] = !empty( $np_no_of_days ) ? $np_no_of_days : "10";
 
 			$np_sticker_pos = get_post_meta( $id, '_np_sticker_pos', true );
@@ -236,14 +237,14 @@ class Woo_Stickers_By_Webline_Public {
 			
 			$np_product_option = get_post_meta( $id, '_np_product_option', true );
 			if( !empty( $np_product_option ) ) $settings['new_product_option'] = $np_product_option;
+
+			$np_sticker_type = get_post_meta( $id, '_np_sticker_type', true );
+			$settings['enable_new_product_style'] = !empty( $np_sticker_type ) ? $np_sticker_type : "";
 			
 			if($np_product_option == 'text') {
 
 				$np_product_custom_text = get_post_meta( $id, '_np_product_custom_text', true );
 				$settings['new_product_custom_text'] = !empty( $np_product_custom_text ) ? $np_product_custom_text : "";
-
-				$np_sticker_type = get_post_meta( $id, '_np_sticker_type', true );
-				$settings['enable_new_product_style'] = !empty( $np_sticker_type ) ? $np_sticker_type : "";
 
 				$np_product_custom_text_fontcolor = get_post_meta( $id, '_np_product_custom_text_fontcolor', true );
 				$settings['new_product_custom_text_fontcolor'] = !empty( $np_product_custom_text_fontcolor ) ? $np_product_custom_text_fontcolor : "";
@@ -515,13 +516,14 @@ class Woo_Stickers_By_Webline_Public {
 			
 			$pos_product_option = get_post_meta( $id, '_pos_product_option', true );
 			if( !empty( $pos_product_option ) ) $settings['sale_product_option'] = $pos_product_option;
+
+			$pos_sticker_type = get_post_meta( $id, '_pos_sticker_type', true );
+			$settings['enable_sale_product_style'] = !empty( $pos_sticker_type ) ? $pos_sticker_type : "";
+
 			if($pos_product_option == 'text') {
 				
 				$pos_product_custom_text = get_post_meta( $id, '_pos_product_custom_text', true );
-				$settings['pos_product_custom_text'] = !empty( $pos_product_custom_text ) ? $pos_product_custom_text : "";
-
-				$pos_sticker_type = get_post_meta( $id, '_pos_sticker_type', true );
-				$settings['enable_sale_product_style'] = !empty( $pos_sticker_type ) ? $pos_sticker_type : "";
+				$settings['sale_product_custom_text'] = !empty( $pos_product_custom_text ) ? $pos_product_custom_text : "";
 
 				$pos_product_custom_text_fontcolor = get_post_meta( $id, '_pos_product_custom_text_fontcolor', true );
 				$settings['sale_product_custom_text_fontcolor'] = !empty( $pos_product_custom_text_fontcolor ) ? $pos_product_custom_text_fontcolor : "";
@@ -792,13 +794,14 @@ class Woo_Stickers_By_Webline_Public {
 			
 			$sop_product_option = get_post_meta( $id, '_sop_product_option', true );
 			if( !empty( $sop_product_option ) ) $settings['sold_product_option'] = $sop_product_option;
+			
+			$sop_sticker_type = get_post_meta( $id, '_sop_sticker_type', true );
+			$settings['enable_sold_product_style'] = !empty( $sop_sticker_type ) ? $sop_sticker_type : "";
+				
 			if($sop_product_option == 'text') {
 
 				$sop_product_custom_text = get_post_meta( $id, '_sop_product_custom_text', true );
 				$settings['sold_product_custom_text'] = !empty( $sop_product_custom_text ) ? $sop_product_custom_text : "";
-
-				$sop_sticker_type = get_post_meta( $id, '_sop_sticker_type', true );
-				$settings['enable_sold_product_style'] = !empty( $sop_sticker_type ) ? $sop_sticker_type : "";
 
 				$sop_product_custom_text_fontcolor = get_post_meta( $id, '_sop_product_custom_text_fontcolor', true );
 				$settings['sold_product_custom_text_fontcolor'] = !empty( $sop_product_custom_text_fontcolor ) ? $sop_product_custom_text_fontcolor : "";
@@ -1075,13 +1078,13 @@ class Woo_Stickers_By_Webline_Public {
 			$cust_product_option = get_post_meta( $id, '_cust_product_option', true );
 			if( !empty( $cust_product_option ) ) $settings['cust_product_option'] = $cust_product_option;
 
+			$cust_sticker_type = get_post_meta( $id, '_cust_sticker_type', true );
+			$settings['enable_cust_product_style'] = !empty( $cust_sticker_type ) ? $cust_sticker_type : "";
+
 			if($cust_product_option == 'text') {
 
 				$cust_product_custom_text = get_post_meta( $id, '_cust_product_custom_text', true );
 				$settings['cust_product_custom_text'] = !empty( $cust_product_custom_text ) ? $cust_product_custom_text : "";
-
-				$cust_sticker_type = get_post_meta( $id, '_cust_sticker_type', true );
-				$settings['enable_cust_product_style'] = !empty( $cust_sticker_type ) ? $cust_sticker_type : "";
 
 				$cust_product_custom_text_fontcolor = get_post_meta( $id, '_cust_product_custom_text_fontcolor', true );
 				$settings['cust_product_custom_text_fontcolor'] = !empty( $cust_product_custom_text_fontcolor ) ? $cust_product_custom_text_fontcolor : "";
@@ -1411,63 +1414,67 @@ class Woo_Stickers_By_Webline_Public {
 
 				if ($enable_new_product_schedule_sticker == "yes" && (($timestamp_start <= $current_timestamp) && ($timestamp_end >= $current_timestamp))) {
 
-					if($new_product_settings['new_product_schedule_sticker_option'] == "text_schedule") {
-						if(!empty($new_product_settings['new_product_schedule_custom_text'])){
-							$class = "woosticker woosticker_new custom_sticker_text";
-							echo '<span class="' . $class . $classPosition . $classTypeSch . '" style="
-								background-color:' . esc_attr($new_product_settings["new_product_schedule_custom_text_backcolor"]) . '; 
-								color:' . esc_attr($new_product_settings["new_product_schedule_custom_text_fontcolor"]) . ';'
-								. $new_product_schedule_text_padding_top 
-								. $new_product_schedule_text_padding_right 
-								. $new_product_schedule_text_padding_bottom 
-								. $new_product_schedule_text_padding_left 
-								. $new_product_top 
-								. $new_product_sticker_left_right .'">'
-								. esc_attr($new_product_settings["new_product_schedule_custom_text"]) .'</span>';
-					
-						}else{
-							$class = (
-								($new_product_settings['enable_new_schedule_product_style'] == "ribbon") ?
-									($new_product_settings['new_product_position'] == 'left' ?
-										" woosticker woosticker_new new_ribbon_left" :
-										" woosticker woosticker_new new_ribbon_right") :
-									($new_product_settings['new_product_position'] == 'left' ?
-										" woosticker woosticker_new new_round_left" :
-										" woosticker woosticker_new new_round_right")
-							);
-							
-								echo '<span class="'. $class . $classPosition. '"  style="' 
-									. $new_product_top 
-									.  $new_product_sticker_left_right 
-									. $new_product_schedule_sticker_image_width 
-									. $new_product_schedule_sticker_image_height .'">'
-									. __ ( 'New', 'woocommerce-new-badge' ) . '</span>';
+					if ((time () - (60 * 60 * 24 * $newness)) < $postdatestamp) {
+
+						if($new_product_settings['new_product_schedule_sticker_option'] == "text_schedule") {
+							if(!empty($new_product_settings['new_product_schedule_custom_text'])){
+								$class = "woosticker woosticker_new custom_sticker_text";
+								echo '<span class="' . esc_attr($class) . esc_attr($classPosition) . esc_attr($classTypeSch) . '" style="
+									background-color:' . esc_attr($new_product_settings["new_product_schedule_custom_text_backcolor"]) . '; 
+									color:' . esc_attr($new_product_settings["new_product_schedule_custom_text_fontcolor"]) . ';'
+									. esc_attr($new_product_schedule_text_padding_top) 
+									. esc_attr($new_product_schedule_text_padding_right) 
+									. esc_attr($new_product_schedule_text_padding_bottom) 
+									. esc_attr($new_product_schedule_text_padding_left) 
+									. esc_attr($new_product_top) 
+									. esc_attr($new_product_sticker_left_right) .'">'
+									. esc_attr($new_product_settings["new_product_schedule_custom_text"]) .'</span>';
+						
+							}else{
+								$class = (
+									($new_product_settings['enable_new_schedule_product_style'] == "ribbon") ?
+										($new_product_settings['new_product_position'] == 'left' ?
+											" woosticker woosticker_new new_ribbon_left" :
+											" woosticker woosticker_new new_ribbon_right") :
+										($new_product_settings['new_product_position'] == 'left' ?
+											" woosticker woosticker_new new_round_left" :
+											" woosticker woosticker_new new_round_right")
+								);
+								
+									echo '<span class="'. esc_attr($class) . esc_attr($classPosition) . '"  style="' 
+										. esc_attr($new_product_top) 
+										.  esc_attr($new_product_sticker_left_right) 
+										. esc_attr($new_product_schedule_sticker_image_width) 
+										. esc_attr($new_product_schedule_sticker_image_height) .'"></span>';
+							}
+						
+						} else if($new_product_settings['new_product_schedule_sticker_option'] == "image_schedule") {
+							if($new_product_settings['new_product_schedule_custom_sticker']!='') {
+								$class = "woosticker woosticker_new custom_sticker_image";
+								echo '<span class="' . esc_attr($class) . esc_attr($classPosition) . esc_attr($classType) . '" style="
+									background-image: url(' . esc_url($new_product_settings['new_product_schedule_custom_sticker']) . ');
+    								background-repeat: no-repeat; background-position: center;
+    								background-size: ' . esc_attr($new_product_settings['new_product_schedule_sticker_image_width']) . 'px ' . esc_attr($new_product_settings['new_product_schedule_sticker_image_height']) . 'px;'
+									. esc_attr($new_product_top)
+									. esc_attr($new_product_sticker_left_right)
+									. esc_attr($new_product_schedule_sticker_image_width)
+									. esc_attr($new_product_schedule_sticker_image_height) . '"></span>';
+							} else {
+								$class=(($new_product_settings['new_product_schedule_custom_sticker'] =='') ? 
+								(($new_product_settings['enable_new_schedule_product_style'] == "ribbon") ? 
+								(($new_product_settings['new_product_position']=='left') ?
+									" woosticker woosticker_new new_ribbon_left ":" woosticker woosticker_new new_ribbon_right ") : 
+										(($new_product_settings['new_product_position']=='left') ?
+											" woosticker woosticker_new new_round_left ":" woosticker woosticker_new new_round_right ")):"woosticker woosticker_new custom_sticker_image");
+																		echo '<span class="'. esc_attr($class) . esc_attr($classPosition) . '"  style="'
+											. esc_attr($new_product_top) 
+											.  esc_attr($new_product_sticker_left_right) 
+											. esc_attr($new_product_schedule_sticker_image_width)
+											. esc_attr($new_product_schedule_sticker_image_height) . '"></span>';
+						
+							}
 						}
-					
-					} else if($new_product_settings['new_product_schedule_sticker_option'] == "image_schedule") {
-						if($new_product_settings['new_product_schedule_custom_sticker']!='') {
-							$class = "woosticker woosticker_new custom_sticker_image";
-							echo '<span class="' . $class . $classPosition . $classType . '" style="
-								background-image:url(' . esc_url($new_product_settings['new_product_schedule_custom_sticker']) . '); ' 
-								. $new_product_top
-								. $new_product_sticker_left_right
-								. $new_product_schedule_sticker_image_width
-								. $new_product_schedule_sticker_image_height . '"></span>';
-						} else {
-							$class=(($new_product_settings['new_product_schedule_custom_sticker'] =='') ? 
-							(($new_product_settings['enable_new_schedule_product_style'] == "ribbon") ? 
-							(($new_product_settings['new_product_position']=='left') ?
-								" woosticker woosticker_new new_ribbon_left ":" woosticker woosticker_new new_ribbon_right ") : 
-									(($new_product_settings['new_product_position']=='left') ?
-										" woosticker woosticker_new new_round_left ":" woosticker woosticker_new new_round_right ")):"woosticker woosticker_new custom_sticker_image");
-								echo '<span class="'. $class . $classPosition. '"  style="'
-									. $new_product_top 
-									.  $new_product_sticker_left_right 
-									. $new_product_schedule_sticker_image_width
-									. $new_product_schedule_sticker_image_height . '">' 
-									. __ ( 'New', 'woocommerce-new-badge' ) . '</span>';
-					
-						}
+
 					}
 
 				}else{
@@ -1477,20 +1484,20 @@ class Woo_Stickers_By_Webline_Public {
 						if($new_product_settings['new_product_option'] == "text") {
 							if(!empty($new_product_settings['new_product_custom_text'])){
 								$class = "woosticker woosticker_new custom_sticker_text";
-								echo '<span class="' . $class . $classPosition . $classType . '" style="
+								echo '<span class="' . esc_attr($class) . esc_attr($classPosition) . esc_attr($classType) . '" style="
 									background-color:' . esc_attr($new_product_settings["new_product_custom_text_backcolor"]) . '; 
 									color:' . esc_attr($new_product_settings["new_product_custom_text_fontcolor"]) . ';'
-									. $new_product_text_padding_top 
-									. $new_product_text_padding_right 
-									. $new_product_text_padding_bottom 
-									. $new_product_text_padding_left 
-									. $new_product_top 
-									. $new_product_sticker_left_right 
-									. $new_product_sticker_rotate 
-									. "animation-name: $animation_name_new;"
-									. "animation-duration: $new_product_sticker_animation_delay;"
-									. "animation-iteration-count: $new_product_sticker_animation_iteration_count;"
-									. "animation-direction: $new_product_sticker_animation_direction;" .'">'
+									. esc_attr($new_product_text_padding_top) 
+									. esc_attr($new_product_text_padding_right) 
+									. esc_attr($new_product_text_padding_bottom) 
+									. esc_attr($new_product_text_padding_left) 
+									. esc_attr($new_product_top) 
+									. esc_attr($new_product_sticker_left_right) 
+									. esc_attr($new_product_sticker_rotate) 
+									. "animation-name: " . esc_attr($animation_name_new) . ";"
+									. "animation-duration: " . esc_attr($new_product_sticker_animation_delay) . ";"
+									. "animation-iteration-count: " . esc_attr($new_product_sticker_animation_iteration_count) . ";"
+									. "animation-direction: " . esc_attr($new_product_sticker_animation_direction) . ";" .'">'
 									. esc_attr($new_product_settings["new_product_custom_text"]) .'</span>';
 	
 							}else{
@@ -1503,33 +1510,32 @@ class Woo_Stickers_By_Webline_Public {
 											" woosticker woosticker_new new_round_left" :
 											" woosticker woosticker_new new_round_right")
 								);
-									echo '<span class="'. $class . $classPosition. '"  style="' 
-										. $new_product_top 
-										.  $new_product_sticker_left_right 
-										. $new_product_sticker_image_width 
-										. $new_product_sticker_image_height 
-										. $new_product_sticker_rotate 
-										. "animation-name: $animation_name_new;"
-										. "animation-duration: $new_product_sticker_animation_delay;"
-										. "animation-iteration-count: $new_product_sticker_animation_iteration_count;"
-										. "animation-direction: $new_product_sticker_animation_direction;" .'">'
-										. __ ( 'New', 'woocommerce-new-badge' ) . '</span>';
+									echo '<span class="'. esc_attr($class) . esc_attr($classPosition) . '"  style="' 
+										. esc_attr($new_product_top) 
+										.  esc_attr($new_product_sticker_left_right) 
+										. esc_attr($new_product_sticker_image_width) 
+										. esc_attr($new_product_sticker_image_height) 
+										. esc_attr($new_product_sticker_rotate) 
+										. "animation-name: " . esc_attr($animation_name_new) . ";"
+										. "animation-duration: " . esc_attr($new_product_sticker_animation_delay) . ";"
+										. "animation-iteration-count: " . esc_attr($new_product_sticker_animation_iteration_count) . ";"
+										. "animation-direction: " . esc_attr($new_product_sticker_animation_direction) . ";" .'"></span>';
 							}
 	
 						} else if($new_product_settings['new_product_option'] == "image") {
 							if($new_product_settings['new_product_custom_sticker']!='') {
 								$class = "woosticker woosticker_new custom_sticker_image";
-								echo '<span class="' . $class . $classPosition . $classType . '" style="
-									background-image:url(' . esc_url($new_product_settings['new_product_custom_sticker']) . '); ' 
-									. $new_product_top
-									. $new_product_sticker_left_right
-									. $new_product_sticker_image_width
-									. $new_product_sticker_image_height 
-									. $new_product_sticker_rotate 
-									. "animation-name: $animation_name_new;"
-									. "animation-duration: $new_product_sticker_animation_delay;"
-									. "animation-iteration-count: $new_product_sticker_animation_iteration_count;"
-									. "animation-direction: $new_product_sticker_animation_direction;" 
+								echo '<span class="' . esc_attr($class) . esc_attr($classPosition) . esc_attr($classType) . '" style="
+									background-image: url(' . esc_url($new_product_settings['new_product_custom_sticker']) . ');
+    								background-repeat: no-repeat; background-position: center;
+    								background-size: ' . esc_attr($new_product_settings['new_product_sticker_image_width']) . 'px ' . esc_attr($new_product_settings['new_product_sticker_image_height']) . 'px;'
+									. esc_attr($new_product_top)
+									. esc_attr($new_product_sticker_left_right)
+									. esc_attr($new_product_sticker_rotate) 
+									. "animation-name: " . esc_attr($animation_name_new) . ";"
+									. "animation-duration: " . esc_attr($new_product_sticker_animation_delay) . ";"
+									. "animation-iteration-count: " . esc_attr($new_product_sticker_animation_iteration_count) . ";"
+									. "animation-direction: " . esc_attr($new_product_sticker_animation_direction) . ";" 
 									. '"></span>';
 							} else {
 								$class=(($new_product_settings['new_product_custom_sticker'] =='') ? 
@@ -1538,17 +1544,16 @@ class Woo_Stickers_By_Webline_Public {
 									" woosticker woosticker_new new_ribbon_left ":" woosticker woosticker_new new_ribbon_right ") : 
 										(($new_product_settings['new_product_position']=='left') ?
 											" woosticker woosticker_new new_round_left ":" woosticker woosticker_new new_round_right ")):"woosticker woosticker_new custom_sticker_image");
-									echo '<span class="'. $class . $classPosition. '"  style="'
-										. $new_product_top 
-										.  $new_product_sticker_left_right 
-										. $new_product_sticker_image_width
-										. $new_product_sticker_image_height 
-										. $new_product_sticker_rotate 
-										. "animation-name: $animation_name_new;"
-										. "animation-duration: $new_product_sticker_animation_delay;"
-										. "animation-iteration-count: $new_product_sticker_animation_iteration_count;"
-										. "animation-direction: $new_product_sticker_animation_direction;" . '">' 
-										. __ ( 'New', 'woocommerce-new-badge' ) . '</span>';
+									echo '<span class="'. esc_attr($class) . esc_attr($classPosition) . '"  style="'
+										. esc_attr($new_product_top) 
+										.  esc_attr($new_product_sticker_left_right) 
+										. esc_attr($new_product_sticker_image_width)
+										. esc_attr($new_product_sticker_image_height) 
+										. esc_attr($new_product_sticker_rotate) 
+										. "animation-name: " . esc_attr($animation_name_new) . ";"
+										. "animation-duration: " . esc_attr($new_product_sticker_animation_delay) . ";"
+										. "animation-iteration-count: " . esc_attr($new_product_sticker_animation_iteration_count) . ";"
+										. "animation-direction: " . esc_attr($new_product_sticker_animation_direction) . ";" . '">' . '</span>';
 	
 							}
 						} else {
@@ -1558,33 +1563,32 @@ class Woo_Stickers_By_Webline_Public {
 									" woosticker woosticker_new new_ribbon_left ":" woosticker woosticker_new new_ribbon_right ") : 
 										(($new_product_settings['new_product_position']=='left') ?
 											" woosticker woosticker_new new_round_left ":" woosticker woosticker_new new_round_right ")):"woosticker woosticker_new custom_sticker_image");
-							echo '<span class="'. $class . $classPosition. '"  style="' 
-									. $new_product_top 
-									.  $new_product_sticker_left_right 
-									. $new_product_sticker_rotate 
-									. "animation-name: $animation_name_new;"
-									. "animation-duration: $new_product_sticker_animation_delay;"
-									. "animation-iteration-count: $new_product_sticker_animation_iteration_count;"
-									. "animation-direction: $new_product_sticker_animation_direction;".'">' 
-									. __ ( 'New', 'woocommerce-new-badge' ) . '</span>';
+														echo '<span class="'. esc_attr($class) . esc_attr($classPosition) . '"  style="' 
+								. esc_attr($new_product_top) 
+								.  esc_attr($new_product_sticker_left_right) 
+								. esc_attr($new_product_sticker_rotate) 
+								. "animation-name: " . esc_attr($animation_name_new) . ";"
+								. "animation-duration: " . esc_attr($new_product_sticker_animation_delay) . ";"
+								. "animation-iteration-count: " . esc_attr($new_product_sticker_animation_iteration_count) . ";"
+								. "animation-direction: " . esc_attr($new_product_sticker_animation_direction) . ";".'"></span>';
 						}
 	
 						?>
 							<style>
 								<?php if($new_product_sticker_animation_type == 'zoominout'){ ?>
-									@keyframes <?php echo $animation_name_new; ?> {
+									@keyframes <?php echo esc_attr($animation_name_new); ?> {
 										0% {
-											transform: scale(<?php echo $new_product_sticker_animation_scale ?>) rotate(0deg) translate(0, 0);
+											transform: scale(<?php echo esc_attr($new_product_sticker_animation_scale) ?>) rotate(0deg) translate(0, 0);
 										}
 									}
 								<?php } elseif($new_product_sticker_animation_type == 'spin'){?>
-									@keyframes <?php echo $animation_name_new; ?> {
+									@keyframes <?php echo esc_attr($animation_name_new); ?> {
 										100% {
 											transform: rotate(360deg) translate(0, 0) ;
 										}
 									}
 								<?php } elseif($new_product_sticker_animation_type == 'swing'){?>
-									@keyframes <?php echo $animation_name_new; ?> {
+									@keyframes <?php echo esc_attr($animation_name_new); ?> {
 										0% {
 											transform: rotate(0deg);
 										}
@@ -1595,7 +1599,7 @@ class Woo_Stickers_By_Webline_Public {
 											transform: rotate(-20deg);
 										}
 								<?php } elseif($new_product_sticker_animation_type == 'updown'){?>
-									@keyframes <?php echo $animation_name_new; ?> {
+									@keyframes <?php echo esc_attr($animation_name_new); ?> {
 										0%   {
 											top:0px;
 										}
@@ -1606,7 +1610,7 @@ class Woo_Stickers_By_Webline_Public {
 											top:0px;
 										}
 								<?php } elseif($new_product_sticker_animation_type == 'leftright'){?>
-									@keyframes <?php echo $animation_name_new; ?> {
+									@keyframes <?php echo esc_attr($animation_name_new); ?> {
 										0%   {
 											left:0px;
 											right: auto;
@@ -1629,7 +1633,6 @@ class Woo_Stickers_By_Webline_Public {
 		}
 	}
 	
-
 	/**
 	 * Function to get sale product badge.
 	 *
@@ -1738,16 +1741,16 @@ class Woo_Stickers_By_Webline_Public {
 							$classSale = "woosticker woosticker_sale custom_sticker_text";
 	
 							$span_class_onsale_sale_woocommerce_span = '<span class="'
-									.$classSale . $classSalePosition . $classSaleTypeSch .'" 
+									. esc_attr($classSale) . esc_attr($classSalePosition) . esc_attr($classSaleTypeSch) .'" 
 									style="
 										background-color:' . esc_attr($sale_product_settings["sale_product_schedule_custom_text_backcolor"]) . '; 
 										color:' . esc_attr($sale_product_settings["sale_product_schedule_custom_text_fontcolor"]) . ';'
-										. $sale_product_schedule_text_padding_top 
-										. $sale_product_schedule_text_padding_right 
-										. $sale_product_schedule_text_padding_bottom 
-										. $sale_product_schedule_text_padding_left 
-										. $sale_product_sticker_top 
-										. $sale_product_sticker_left_right
+										. esc_attr($sale_product_schedule_text_padding_top) 
+										. esc_attr($sale_product_schedule_text_padding_right) 
+										. esc_attr($sale_product_schedule_text_padding_bottom) 
+										. esc_attr($sale_product_schedule_text_padding_left) 
+										. esc_attr($sale_product_sticker_top) 
+										. esc_attr($sale_product_sticker_left_right)
 										.'">'. esc_attr($sale_product_settings["sale_product_schedule_custom_text"]) 
 										.'</span>';
 	
@@ -1756,33 +1759,35 @@ class Woo_Stickers_By_Webline_Public {
 								
 								$classSale = "woosticker woosticker_sale custom_sticker_image";
 								$span_class_onsale_sale_woocommerce_span = '<span class="'
-									. $classSale . $classSalePosition . $classSaleTypeSch .'" 
+									. esc_attr($classSale) . esc_attr($classSalePosition) . esc_attr($classSaleTypeSch) .'" 
 									style="
-										background-image:url('.esc_url($sale_product_settings['sale_product_schedule_custom_sticker']).'); ' 
-										. $sale_product_sticker_top 
-										. $sale_product_sticker_left_right 
-										. $sale_product_schedule_sticker_image_width 
-										. $sale_product_schedule_sticker_image_height 
+										background-image: url(' . esc_url($sale_product_settings['sale_product_schedule_custom_sticker']) . ');
+										background-repeat: no-repeat; background-position: center;
+										background-size: ' . esc_attr($sale_product_settings['sale_product_schedule_sticker_image_width']) . 'px ' . esc_attr($sale_product_settings['sale_product_schedule_sticker_image_height']) . 'px;'
+										. esc_attr($sale_product_sticker_top) 
+										. esc_attr($sale_product_sticker_left_right) 
+										. esc_attr($sale_product_schedule_sticker_image_width) 
+										. esc_attr($sale_product_schedule_sticker_image_height) 
 										.'"></span>';
 							} else {
 								$classSale = (($sale_product_settings['sale_product_custom_sticker']=='')?(($sale_product_settings['enable_sale_product_style'] == "ribbon") ? (($sale_product_settings['sale_product_position']=='left')?" woosticker woosticker_sale onsale_ribbon_left ":" woosticker woosticker_sale onsale_ribbon_right ") : (($sale_product_settings['sale_product_position']=='left')?" woosticker woosticker_sale onsale_round_left ":" woosticker woosticker_sale onsale_round_right ")):"woosticker woosticker_sale custom_sticker_image");
 								$span_class_onsale_sale_woocommerce_span =  '<span class="' 
-									. $classSale . $classSalePosition . '" 
+									. esc_attr($classSale) . esc_attr($classSalePosition) . '" 
 									style = "' 
-										. $sale_product_sticker_top 
-										. $sale_product_sticker_left_right 
-										. $sale_product_schedule_sticker_image_width 
-										. $sale_product_schedule_sticker_image_height 
-										. '"> '. __('Sale', 'woo-stickers-by-webline' ) .' </span>';
+										. esc_attr($sale_product_sticker_top) 
+										. esc_attr($sale_product_sticker_left_right) 
+										. esc_attr($sale_product_schedule_sticker_image_width) 
+										. esc_attr($sale_product_schedule_sticker_image_height) 
+										. '"></span>';
 							}
 						} else {
 							$classSale = (($sale_product_settings['sale_product_custom_sticker']=='')?(($sale_product_settings['enable_sale_product_style'] == "ribbon") ? (($sale_product_settings['sale_product_position']=='left')?" woosticker woosticker_sale onsale_ribbon_left ":" woosticker woosticker_sale onsale_ribbon_right ") : (($sale_product_settings['sale_product_position']=='left')?" woosticker woosticker_sale onsale_round_left ":" woosticker woosticker_sale onsale_round_right ")):"woosticker woosticker_sale custom_sticker_image");
 							$span_class_onsale_sale_woocommerce_span =  '<span class="' 
-								. $classSale . $classSalePosition . '" 
+								. esc_attr($classSale) . esc_attr($classSalePosition) . '" 
 								style="' 
-									. $sale_product_sticker_top 
-									.  $sale_product_sticker_left_right 
-									.'"> '. __('Sale', 'woo-stickers-by-webline' ) .' </span>';
+									. esc_attr($sale_product_sticker_top) 
+									.  esc_attr($sale_product_sticker_left_right) 
+									.'"></span>';
 						}
 					}
 					else {
@@ -1802,87 +1807,89 @@ class Woo_Stickers_By_Webline_Public {
 								$classSale = "woosticker woosticker_sale custom_sticker_text";
 	
 								$span_class_onsale_sale_woocommerce_span = '<span class="'
-									.$classSale . $classSalePosition . $classSaleType .'" 
+									. esc_attr($classSale) . esc_attr($classSalePosition) . esc_attr($classSaleType) .'" 
 									style="
 										background-color:' . esc_attr($sale_product_settings["sale_product_custom_text_backcolor"]) . '; 
 										color:' . esc_attr($sale_product_settings["sale_product_custom_text_fontcolor"]) . ';'
-										. $sale_product_text_padding_top 
-										. $sale_product_text_padding_right 
-										. $sale_product_text_padding_bottom 
-										. $sale_product_text_padding_left 
-										. $sale_product_sticker_top 
-										. $sale_product_sticker_left_right
-										. $sale_product_sticker_rotate
-										. "animation-name: $animation_name_sale;"
-										. "animation-duration: $sale_product_sticker_animation_delay;"
-										. "animation-iteration-count: $sale_product_sticker_animation_iteration_count;"
-										. "animation-direction: $sale_product_sticker_animation_direction;"
+										. esc_attr($sale_product_text_padding_top) 
+										. esc_attr($sale_product_text_padding_right) 
+										. esc_attr($sale_product_text_padding_bottom) 
+										. esc_attr($sale_product_text_padding_left) 
+										. esc_attr($sale_product_sticker_top) 
+										. esc_attr($sale_product_sticker_left_right)
+										. esc_attr($sale_product_sticker_rotate)
+										. "animation-name: " . esc_attr($animation_name_sale) . ";"
+										. "animation-duration: " . esc_attr($sale_product_sticker_animation_delay) . ";"
+										. "animation-iteration-count: " . esc_attr($sale_product_sticker_animation_iteration_count) . ";"
+										. "animation-direction: " . esc_attr($sale_product_sticker_animation_direction) . ";"
 										.'">'. esc_attr($sale_product_settings["sale_product_custom_text"]) 
 										.'</span>';
 								
 							}else{
 								$classSale = (($sale_product_settings['sale_product_custom_sticker']=='')?(($sale_product_settings['enable_sale_product_style'] == "ribbon") ? (($sale_product_settings['sale_product_position']=='left')?" woosticker woosticker_sale onsale_ribbon_left ":" woosticker woosticker_sale onsale_ribbon_right ") : (($sale_product_settings['sale_product_position']=='left')?" woosticker woosticker_sale onsale_round_left ":" woosticker woosticker_sale onsale_round_right ")):"woosticker woosticker_sale custom_sticker_image");
 								$span_class_onsale_sale_woocommerce_span =  '<span class="' 
-									. $classSale . $classSalePosition . '" 
+									. esc_attr($classSale) . esc_attr($classSalePosition) . '" 
 									style = "' 
-										. $sale_product_sticker_top 
-										. $sale_product_sticker_left_right 
-										. $sale_product_sticker_image_width 
-										. $sale_product_sticker_image_height 
-										. $sale_product_sticker_rotate
-										. "animation-name: $animation_name_sale;"
-										. "animation-duration: $sale_product_sticker_animation_delay;"
-										. "animation-iteration-count: $sale_product_sticker_animation_iteration_count;"
-										. "animation-direction: $sale_product_sticker_animation_direction;"
-										. '"> '. __('Sale', 'woo-stickers-by-webline' ) .' </span>';
+										. esc_attr($sale_product_sticker_top) 
+										. esc_attr($sale_product_sticker_left_right) 
+										. esc_attr($sale_product_sticker_image_width) 
+										. esc_attr($sale_product_sticker_image_height) 
+										. esc_attr($sale_product_sticker_rotate)
+										. "animation-name: " . esc_attr($animation_name_sale) . ";"
+										. "animation-duration: " . esc_attr($sale_product_sticker_animation_delay) . ";"
+										. "animation-iteration-count: " . esc_attr($sale_product_sticker_animation_iteration_count) . ";"
+										. "animation-direction: " . esc_attr($sale_product_sticker_animation_direction) . ";"
+										. '"></span>';
 							}
 	
 						} else if($sale_product_settings['sale_product_option'] == "image") {
 							if($sale_product_settings['sale_product_custom_sticker']!='') {
 								$classSale = "woosticker woosticker_sale custom_sticker_image";
 								$span_class_onsale_sale_woocommerce_span = '<span class="'
-									. $classSale . $classSalePosition . $classSaleType .'" 
+									. esc_attr($classSale) . esc_attr($classSalePosition) . esc_attr($classSaleType) .'" 
 									style="
-										background-image:url('.esc_url($sale_product_settings['sale_product_custom_sticker']).'); ' 
-										. $sale_product_sticker_top 
-										. $sale_product_sticker_left_right 
-										. $sale_product_sticker_image_width 
-										. $sale_product_sticker_image_height 
-										. $sale_product_sticker_rotate
-										. "animation-name: $animation_name_sale;"
-										. "animation-duration: $sale_product_sticker_animation_delay;"
-										. "animation-iteration-count: $sale_product_sticker_animation_iteration_count;"
-										. "animation-direction: $sale_product_sticker_animation_direction;"
+										background-image: url(' . esc_url($sale_product_settings['sale_product_custom_sticker']) . ');
+    									background-repeat: no-repeat; background-position: center;
+    									background-size: ' . esc_attr($sale_product_settings['sale_product_sticker_image_width']) . 'px ' . esc_attr($sale_product_settings['sale_product_sticker_image_height']) . 'px;'
+										. esc_attr($sale_product_sticker_top) 
+										. esc_attr($sale_product_sticker_left_right) 
+										. esc_attr($sale_product_sticker_image_width) 
+										. esc_attr($sale_product_sticker_image_height) 
+										. esc_attr($sale_product_sticker_rotate)
+										. "animation-name: " . esc_attr($animation_name_sale) . ";"
+										. "animation-duration: " . esc_attr($sale_product_sticker_animation_delay) . ";"
+										. "animation-iteration-count: " . esc_attr($sale_product_sticker_animation_iteration_count) . ";"
+										. "animation-direction: " . esc_attr($sale_product_sticker_animation_direction) . ";"
 										.'"></span>';
 							} else {
 								$classSale = (($sale_product_settings['sale_product_custom_sticker']=='')?(($sale_product_settings['enable_sale_product_style'] == "ribbon") ? (($sale_product_settings['sale_product_position']=='left')?" woosticker woosticker_sale onsale_ribbon_left ":" woosticker woosticker_sale onsale_ribbon_right ") : (($sale_product_settings['sale_product_position']=='left')?" woosticker woosticker_sale onsale_round_left ":" woosticker woosticker_sale onsale_round_right ")):"woosticker woosticker_sale custom_sticker_image");
 								$span_class_onsale_sale_woocommerce_span =  '<span class="' 
-									. $classSale . $classSalePosition . '" 
+									. esc_attr($classSale) . esc_attr($classSalePosition) . '" 
 									style = "' 
-										. $sale_product_sticker_top 
-										. $sale_product_sticker_left_right 
-										. $sale_product_sticker_image_width 
-										. $sale_product_sticker_image_height 
-										. $sale_product_sticker_rotate
-										. "animation-name: $animation_name_sale;"
-										. "animation-duration: $sale_product_sticker_animation_delay;"
-										. "animation-iteration-count: $sale_product_sticker_animation_iteration_count;"
-										. "animation-direction: $sale_product_sticker_animation_direction;"
-										. '"> '. __('Sale', 'woo-stickers-by-webline' ) .' </span>';
+										. esc_attr($sale_product_sticker_top) 
+										. esc_attr($sale_product_sticker_left_right) 
+										. esc_attr($sale_product_sticker_image_width) 
+										. esc_attr($sale_product_sticker_image_height) 
+										. esc_attr($sale_product_sticker_rotate)
+										. "animation-name: " . esc_attr($animation_name_sale) . ";"
+										. "animation-duration: " . esc_attr($sale_product_sticker_animation_delay) . ";"
+										. "animation-iteration-count: " . esc_attr($sale_product_sticker_animation_iteration_count) . ";"
+										. "animation-direction: " . esc_attr($sale_product_sticker_animation_direction) . ";"
+										. '"></span>';
 							}
 						} else {
 							$classSale = (($sale_product_settings['sale_product_custom_sticker']=='')?(($sale_product_settings['enable_sale_product_style'] == "ribbon") ? (($sale_product_settings['sale_product_position']=='left')?" woosticker woosticker_sale onsale_ribbon_left ":" woosticker woosticker_sale onsale_ribbon_right ") : (($sale_product_settings['sale_product_position']=='left')?" woosticker woosticker_sale onsale_round_left ":" woosticker woosticker_sale onsale_round_right ")):"woosticker woosticker_sale custom_sticker_image");
 							$span_class_onsale_sale_woocommerce_span =  '<span class="' 
-								. $classSale . $classSalePosition . '" 
+								. esc_attr($classSale) . esc_attr($classSalePosition) . '" 
 								style="' 
-									. $sale_product_sticker_top 
-									.  $sale_product_sticker_left_right 
-									. $sale_product_sticker_rotate
-									. "animation-name: $animation_name_sale;"
-									. "animation-duration: $sale_product_sticker_animation_delay;"
-									. "animation-iteration-count: $sale_product_sticker_animation_iteration_count;"
-									. "animation-direction: $sale_product_sticker_animation_direction;"
-									.'"> '. __('Sale', 'woo-stickers-by-webline' ) .' </span>';
+									. esc_attr($sale_product_sticker_top) 
+									.  esc_attr($sale_product_sticker_left_right) 
+									. esc_attr($sale_product_sticker_rotate)
+									. "animation-name: " . esc_attr($animation_name_sale) . ";"
+									. "animation-duration: " . esc_attr($sale_product_sticker_animation_delay) . ";"
+									. "animation-iteration-count: " . esc_attr($sale_product_sticker_animation_iteration_count) . ";"
+									. "animation-direction: " . esc_attr($sale_product_sticker_animation_direction) . ";"
+									.'"></span>';
 						}
 					}
 					else {
@@ -1895,19 +1902,19 @@ class Woo_Stickers_By_Webline_Public {
 				?>
 					<style>
 						<?php if($sale_product_sticker_animation_type == 'zoominout'){ ?>
-							@keyframes <?php echo $animation_name_sale; ?> {
+							@keyframes <?php echo esc_attr($animation_name_sale); ?> {
 								0% {
-									transform: scale(<?php echo $sale_product_sticker_animation_scale ?>) rotate(0deg) translate(0, 0);
+									transform: scale(<?php echo esc_attr($sale_product_sticker_animation_scale) ?>) rotate(0deg) translate(0, 0);
 								}
 							}
 						<?php } elseif($sale_product_sticker_animation_type == 'spin'){?>
-							@keyframes <?php echo $animation_name_sale; ?> {
+							@keyframes <?php echo esc_attr($animation_name_sale); ?> {
 								100% {
 									transform: rotate(360deg) translate(0, 0) ;
 								}
 							}
 						<?php } elseif($sale_product_sticker_animation_type == 'swing'){?>
-							@keyframes <?php echo $animation_name_sale; ?> {
+							@keyframes <?php echo esc_attr($animation_name_sale); ?> {
 								0% {
 									transform: rotate(0deg);
 								}
@@ -1918,7 +1925,7 @@ class Woo_Stickers_By_Webline_Public {
 									transform: rotate(-20deg);
 								}
 						<?php } elseif($sale_product_sticker_animation_type == 'updown'){?>
-							@keyframes <?php echo $animation_name_sale; ?> {
+							@keyframes <?php echo esc_attr($animation_name_sale); ?> {
 								0%   {
 									top:0px;
 								}
@@ -1929,7 +1936,7 @@ class Woo_Stickers_By_Webline_Public {
 									top:0px;
 								}
 						<?php } elseif($sale_product_sticker_animation_type == 'leftright'){?>
-							@keyframes <?php echo $animation_name_sale; ?> {
+							@keyframes <?php echo esc_attr($animation_name_sale); ?> {
 								0%   {
 									left:0px;
 									right: auto;
@@ -1980,51 +1987,51 @@ class Woo_Stickers_By_Webline_Public {
 
 				// New Changes Start
 				$sold_product_sticker_top = isset($sold_product_settings['sold_product_sticker_top']) && $sold_product_settings['sold_product_sticker_top'] !== '' ? absint($sold_product_settings['sold_product_sticker_top']) . 'px' : '';
-				$sold_product_sticker_top = !empty($sold_product_sticker_top) ? "top: $sold_product_sticker_top;" : "";	
+				$sold_product_sticker_top = !empty($sold_product_sticker_top) ? "top: " . esc_attr($sold_product_sticker_top) . ";" : "";	
 
 				$sold_product_sticker_left_right = isset($sold_product_settings['sold_product_sticker_left_right']) && $sold_product_settings['sold_product_sticker_left_right'] !== '' ? absint($sold_product_settings['sold_product_sticker_left_right']) . 'px' : '';
 				if($sold_product_settings['sold_product_position']=='left'){
-					$sold_product_sticker_left_right = !empty($sold_product_sticker_left_right) ? "left: $sold_product_sticker_left_right;" : "";	
+					$sold_product_sticker_left_right = !empty($sold_product_sticker_left_right) ? "left: " . esc_attr($sold_product_sticker_left_right) . ";" : "";	
 				}else {
-					$sold_product_sticker_left_right = !empty($sold_product_sticker_left_right) ? "right: $sold_product_sticker_left_right;" : "";	
+					$sold_product_sticker_left_right = !empty($sold_product_sticker_left_right) ? "right: " . esc_attr($sold_product_sticker_left_right) . ";" : "";	
 				}
 
 				$sold_product_sticker_image_width = isset($sold_product_settings['sold_product_sticker_image_width']) && $sold_product_settings['sold_product_sticker_image_width'] !== '' ? absint($sold_product_settings['sold_product_sticker_image_width']) . 'px' : '';
 				$sold_product_sticker_image_height = isset($sold_product_settings['sold_product_sticker_image_height']) && $sold_product_settings['sold_product_sticker_image_height'] !== '' ? absint($sold_product_settings['sold_product_sticker_image_height']) . 'px' : '';
 
-				$sold_product_sticker_image_width = !empty($sold_product_sticker_image_width) ? "width: $sold_product_sticker_image_width;" : "";	
-				$sold_product_sticker_image_height = !empty($sold_product_sticker_image_height) ? "height: $sold_product_sticker_image_height;" : "";	
+				$sold_product_sticker_image_width = !empty($sold_product_sticker_image_width) ? "width: " . esc_attr($sold_product_sticker_image_width) . ";" : "";	
+				$sold_product_sticker_image_height = !empty($sold_product_sticker_image_height) ? "height: " . esc_attr($sold_product_sticker_image_height) . ";" : "";	
 
 				$sold_product_text_padding_top = isset($sold_product_settings['sold_product_text_padding_top']) && $sold_product_settings['sold_product_text_padding_top'] !== '' ? absint($sold_product_settings['sold_product_text_padding_top']) . 'px' : '';
 				$sold_product_text_padding_right = isset($sold_product_settings['sold_product_text_padding_right']) && $sold_product_settings['sold_product_text_padding_right'] !== '' ? absint($sold_product_settings['sold_product_text_padding_right']) . 'px' : '';
 				$sold_product_text_padding_bottom = isset($sold_product_settings['sold_product_text_padding_bottom']) && $sold_product_settings['sold_product_text_padding_bottom'] !== '' ? absint($sold_product_settings['sold_product_text_padding_bottom']) . 'px' : '';
 				$sold_product_text_padding_left = isset($sold_product_settings['sold_product_text_padding_left']) && $sold_product_settings['sold_product_text_padding_left'] !== '' ? absint($sold_product_settings['sold_product_text_padding_left']) . 'px' : '';
 
-				$sold_product_text_padding_top = !empty($sold_product_text_padding_top) ? "padding-top: $sold_product_text_padding_top;" : "";	
-				$sold_product_text_padding_right = !empty($sold_product_text_padding_right) ? "padding-right: $sold_product_text_padding_right;" : "";	
-				$sold_product_text_padding_bottom = !empty($sold_product_text_padding_bottom) ? "padding-bottom: $sold_product_text_padding_bottom;" : "";	
-				$sold_product_text_padding_left = !empty($sold_product_text_padding_left) ? "padding-left: $sold_product_text_padding_left;" : "";	
+				$sold_product_text_padding_top = !empty($sold_product_text_padding_top) ? "padding-top: " . esc_attr($sold_product_text_padding_top) . ";" : "";	
+				$sold_product_text_padding_right = !empty($sold_product_text_padding_right) ? "padding-right: " . esc_attr($sold_product_text_padding_right) . ";" : "";	
+				$sold_product_text_padding_bottom = !empty($sold_product_text_padding_bottom) ? "padding-bottom: " . esc_attr($sold_product_text_padding_bottom) . ";" : "";	
+				$sold_product_text_padding_left = !empty($sold_product_text_padding_left) ? "padding-left: " . esc_attr($sold_product_text_padding_left) . ";" : "";	
 
 				$sold_product_sticker_rotate = isset($sold_product_settings['sold_product_sticker_rotate']) && $sold_product_settings['sold_product_sticker_rotate'] !== '' ? absint($sold_product_settings['sold_product_sticker_rotate']) . 'deg' : '';
-				$sold_product_sticker_rotate = !empty($sold_product_sticker_rotate) ? "rotate: $sold_product_sticker_rotate;" : "";
+				$sold_product_sticker_rotate = !empty($sold_product_sticker_rotate) ? "rotate: " . esc_attr($sold_product_sticker_rotate) . ";" : "";
 
 				$sold_product_sticker_animation_scale = isset($sold_product_settings['sold_product_sticker_animation_scale']) && $sold_product_settings['sold_product_sticker_animation_scale'] !== '' ? ($sold_product_settings['sold_product_sticker_animation_scale']) : '';
-				$sold_product_sticker_animation_scale = !empty($sold_product_sticker_animation_scale) ? "$sold_product_sticker_animation_scale" : "1.2";
+				$sold_product_sticker_animation_scale = !empty($sold_product_sticker_animation_scale) ? esc_attr($sold_product_sticker_animation_scale) : "1.2";
 
 				$sold_product_sticker_animation_rotate = isset($sold_product_settings['sold_product_sticker_animation_rotate']) && $sold_product_settings['sold_product_sticker_animation_rotate'] !== '' ? ($sold_product_settings['sold_product_sticker_animation_rotate']) : '';
-				$sold_product_sticker_animation_rotate = !empty($sold_product_sticker_animation_rotate) ? "$sold_product_sticker_animation_rotate" . "deg" : "";
+				$sold_product_sticker_animation_rotate = !empty($sold_product_sticker_animation_rotate) ? esc_attr($sold_product_sticker_animation_rotate) . "deg" : "";
 
 				$sold_product_sticker_animation_iteration_count = isset($sold_product_settings['sold_product_sticker_animation_iteration_count']) && $sold_product_settings['sold_product_sticker_animation_iteration_count'] !== '' ? ($sold_product_settings['sold_product_sticker_animation_iteration_count']) : '';
-				$sold_product_sticker_animation_iteration_count = !empty($sold_product_sticker_animation_iteration_count) ? "$sold_product_sticker_animation_iteration_count" : "2";
+				$sold_product_sticker_animation_iteration_count = !empty($sold_product_sticker_animation_iteration_count) ? esc_attr($sold_product_sticker_animation_iteration_count) : "2";
 
 				$sold_product_sticker_animation_delay = isset($sold_product_settings['sold_product_sticker_animation_delay']) && $sold_product_settings['sold_product_sticker_animation_delay'] !== '' ? ($sold_product_settings['sold_product_sticker_animation_delay']) : '';
-				$sold_product_sticker_animation_delay = !empty($sold_product_sticker_animation_delay) ? "$sold_product_sticker_animation_delay" .'s' : "2s";
+				$sold_product_sticker_animation_delay = !empty($sold_product_sticker_animation_delay) ? esc_attr($sold_product_sticker_animation_delay) .'s' : "2s";
 
 				$sold_product_sticker_animation_direction = isset($sold_product_settings['sold_product_sticker_animation_direction']) && $sold_product_settings['sold_product_sticker_animation_direction'] !== '' ? ($sold_product_settings['sold_product_sticker_animation_direction']) : '';
-				$sold_product_sticker_animation_direction = !empty($sold_product_sticker_animation_direction) ? "$sold_product_sticker_animation_direction" : "";
+				$sold_product_sticker_animation_direction = !empty($sold_product_sticker_animation_direction) ? esc_attr($sold_product_sticker_animation_direction) : "";
 
 				$sold_product_sticker_animation_type = isset($sold_product_settings['sold_product_sticker_animation_type']) && $sold_product_settings['sold_product_sticker_animation_type'] !== '' ? ($sold_product_settings['sold_product_sticker_animation_type']) : '';
-				$sold_product_sticker_animation_type = !empty($sold_product_sticker_animation_type) ? "$sold_product_sticker_animation_type" : "";
+				$sold_product_sticker_animation_type = !empty($sold_product_sticker_animation_type) ? esc_attr($sold_product_sticker_animation_type) : "";
 
 				$enable_sold_product_schedule_sticker = isset($sold_product_settings['enable_sold_product_schedule_sticker']) && $sold_product_settings['enable_sold_product_schedule_sticker'] !== '' ? ($sold_product_settings['enable_sold_product_schedule_sticker']) : '';
 
@@ -2039,22 +2046,22 @@ class Woo_Stickers_By_Webline_Public {
 				$current_timestamp = current_time('timestamp');
 
 				$sold_product_schedule_sticker_image_width = isset($sold_product_settings['sold_product_schedule_sticker_image_width']) && $sold_product_settings['sold_product_schedule_sticker_image_width'] !== '' ? absint($sold_product_settings['sold_product_schedule_sticker_image_width']) . 'px' : '';
-				$sold_product_schedule_sticker_image_width = !empty($sold_product_schedule_sticker_image_width) ? "width: $sold_product_schedule_sticker_image_width;" : "";	
+				$sold_product_schedule_sticker_image_width = !empty($sold_product_schedule_sticker_image_width) ? "width: " . esc_attr($sold_product_schedule_sticker_image_width) . ";" : "";	
 
 				$sold_product_schedule_sticker_image_height = isset($sold_product_settings['sold_product_schedule_sticker_image_height']) && $sold_product_settings['sold_product_schedule_sticker_image_height'] !== '' ? absint($sold_product_settings['sold_product_schedule_sticker_image_height']) . 'px' : '';
-				$sold_product_schedule_sticker_image_height = !empty($sold_product_schedule_sticker_image_height) ? "height: $sold_product_schedule_sticker_image_height;" : "";	
+				$sold_product_schedule_sticker_image_height = !empty($sold_product_schedule_sticker_image_height) ? "height: " . esc_attr($sold_product_schedule_sticker_image_height) . ";" : "";	
 
 				$sold_product_schedule_text_padding_top = isset($sold_product_settings['sold_product_schedule_text_padding_top']) && $sold_product_settings['sold_product_schedule_text_padding_top'] !== '' ? absint($sold_product_settings['sold_product_schedule_text_padding_top']) . 'px' : '';
-				$sold_product_schedule_text_padding_top = !empty($sold_product_schedule_text_padding_top) ? "padding-top: $sold_product_schedule_text_padding_top;" : "";	
+				$sold_product_schedule_text_padding_top = !empty($sold_product_schedule_text_padding_top) ? "padding-top: " . esc_attr($sold_product_schedule_text_padding_top) . ";" : "";	
 
 				$sold_product_schedule_text_padding_right = isset($sold_product_settings['sold_product_schedule_text_padding_right']) && $sold_product_settings['sold_product_schedule_text_padding_right'] !== '' ? absint($sold_product_settings['sold_product_schedule_text_padding_right']) . 'px' : '';
-				$sold_product_schedule_text_padding_right = !empty($sold_product_schedule_text_padding_right) ? "padding-right: $sold_product_schedule_text_padding_right;" : "";	
+				$sold_product_schedule_text_padding_right = !empty($sold_product_schedule_text_padding_right) ? "padding-right: " . esc_attr($sold_product_schedule_text_padding_right) . ";" : "";	
 
 				$sold_product_schedule_text_padding_bottom = isset($sold_product_settings['sold_product_schedule_text_padding_bottom']) && $sold_product_settings['sold_product_schedule_text_padding_bottom'] !== '' ? absint($sold_product_settings['sold_product_schedule_text_padding_bottom']) . 'px' : '';
-				$sold_product_schedule_text_padding_bottom = !empty($sold_product_schedule_text_padding_bottom) ? "padding-bottom: $sold_product_schedule_text_padding_bottom;" : "";	
+				$sold_product_schedule_text_padding_bottom = !empty($sold_product_schedule_text_padding_bottom) ? "padding-bottom: " . esc_attr($sold_product_schedule_text_padding_bottom) . ";" : "";	
 
 				$sold_product_schedule_text_padding_left = isset($sold_product_settings['sold_product_schedule_text_padding_left']) && $sold_product_settings['sold_product_schedule_text_padding_left'] !== '' ? absint($sold_product_settings['sold_product_schedule_text_padding_left']) . 'px' : '';
-				$sold_product_schedule_text_padding_left = !empty($sold_product_schedule_text_padding_left) ? "padding-left: $sold_product_schedule_text_padding_left;" : "";
+				$sold_product_schedule_text_padding_left = !empty($sold_product_schedule_text_padding_left) ? "padding-left: " . esc_attr($sold_product_schedule_text_padding_left) . ";" : "";
 				
 				// New Changes End
 
@@ -2069,63 +2076,62 @@ class Woo_Stickers_By_Webline_Public {
 						if($variation['is_in_stock']==true){
 							$total_qty++;
 						}
-						
 					}
 
+					
 					if($total_qty==0){
-						$animation_name_sold = 'new_product_sticker_animation_' . get_the_ID();
+						$animation_name_sold = 'sold_product_sticker_animation_' . get_the_ID();
 						
 						if ($enable_sold_product_schedule_sticker == "yes" && (($timestamp_start <= $current_timestamp) && ($timestamp_end >= $current_timestamp))) {
-
 							if($sold_product_settings['sold_product_schedule_sticker_option'] == "text_schedule" && !empty($sold_product_settings['sold_product_schedule_custom_text'])) { 
 						
 								$classSold = "woosticker woosticker_sold custom_sticker_text";
 								echo '<span class="'
-										.$classSold . $classSoldPosition . $classSoldTypeSch .'" 
+										. esc_attr($classSold) . esc_attr($classSoldPosition) . esc_attr($classSoldTypeSch) .'" 
 										style="
 											background-color:' . esc_attr($sold_product_settings["sold_product_schedule_custom_text_backcolor"]) . '; 
 											color:' . esc_attr($sold_product_settings["sold_product_schedule_custom_text_fontcolor"]) . ';'
-											. $sold_product_schedule_text_padding_top 
-											. $sold_product_schedule_text_padding_right 
-											. $sold_product_schedule_text_padding_bottom 
-											. $sold_product_schedule_text_padding_left 
-											. $sold_product_sticker_top 
-											. $sold_product_sticker_left_right 
+											. esc_attr($sold_product_schedule_text_padding_top) 
+											. esc_attr($sold_product_schedule_text_padding_right) 
+											. esc_attr($sold_product_schedule_text_padding_bottom) 
+											. esc_attr($sold_product_schedule_text_padding_left) 
+											. esc_attr($sold_product_sticker_top) 
+											. esc_attr($sold_product_sticker_left_right) 
 											.'">'. esc_attr($sold_product_settings["sold_product_schedule_custom_text"]) .'</span>';
 							
 							} else if($sold_product_settings['sold_product_schedule_sticker_option'] == "image_schedule") {
-								if($sold_product_settings['sold_product_custom_sticker']!='') {
+								if($sold_product_settings['sold_product_schedule_custom_sticker']!='') {
 									$classSold = "woosticker woosticker_sold custom_sticker_image";
 									echo '<span class="' 
-										. $classSold . $classSoldPosition . $classSoldTypeSch .'" 
+										. esc_attr($classSold) . esc_attr($classSoldPosition) . esc_attr($classSoldTypeSch) .'" 
 										style="
-											background-image:url('.esc_url($sold_product_settings['sold_product_custom_sticker']).'); '
-											. $sold_product_sticker_top 
-											. $sold_product_sticker_left_right 
-											. $sold_product_schedule_sticker_image_width 
-											. $sold_product_schedule_sticker_image_height 
+											background-image:url('.esc_url($sold_product_settings['sold_product_schedule_custom_sticker']).'); '
+											. esc_attr($sold_product_sticker_top) 
+											. esc_attr($sold_product_sticker_left_right) 
+											. esc_attr($sold_product_schedule_sticker_image_width) 
+											. esc_attr($sold_product_schedule_sticker_image_height) 
 											.' "></span>';
 								} else {
 									$classSold = (($sold_product_settings['sold_product_custom_sticker']=='')?(($sold_product_settings['enable_sold_schedule_product_style'] == "ribbon") ? (($sold_product_settings['sold_product_position']=='left')?" woosticker woosticker_sold soldout_ribbon_left ":" woosticker woosticker_sold soldout_ribbon_right ") : (($sold_product_settings['sold_product_position']=='left')?" woosticker woosticker_sold soldout_round_left ":" woosticker woosticker_sold soldout_round_right ")):"woosticker woosticker_sold custom_sticker_image");
 									echo '<span class="'
-										.$classSold . $classSoldPosition .'"
+										. esc_attr($classSold) . esc_attr($classSoldPosition) .'"
 										style="' 
-											. $sold_product_sticker_top 
-											. $sold_product_sticker_left_right 
-											. $sold_product_schedule_sticker_image_width 
-											. $sold_product_schedule_sticker_image_height 
-											.'">'. __('Sold Out', 'woo-stickers-by-webline' ) .'</span>';
+											. esc_attr($sold_product_sticker_top) 
+											. esc_attr($sold_product_sticker_left_right) 
+											. esc_attr($sold_product_schedule_sticker_image_width) 
+											. esc_attr($sold_product_schedule_sticker_image_height) 
+											.'"></span>';
 								}
 							} else {
 							$classSold = (($sold_product_settings['sold_product_custom_sticker']=='')?(($sold_product_settings['enable_sold_schedule_product_style'] == "ribbon") ? (($sold_product_settings['sold_product_position']=='left')?" woosticker woosticker_sold soldout_ribbon_left ":" woosticker woosticker_sold soldout_ribbon_right ") : (($sold_product_settings['sold_product_position']=='left')?" woosticker woosticker_sold soldout_round_left ":" woosticker woosticker_sold soldout_round_right ")):"woosticker woosticker_sold custom_sticker_image");
 							echo '<span class="'
-									.$classSold . $classSoldPosition .'" 
+									. esc_attr($classSold) . esc_attr($classSoldPosition) .'" 
 									style="' 
-										. $sold_product_sticker_top 
-										. $sold_product_sticker_left_right 
-										. $sold_product_schedule_sticker_image_width 
-										. $sold_product_schedule_sticker_image_height 
-										.'">'. __('Sold Out', 'woo-stickers-by-webline' ) .'</span>';
+										. esc_attr($sold_product_sticker_top) 
+										. esc_attr($sold_product_sticker_left_right) 
+										. esc_attr($sold_product_schedule_sticker_image_width) 
+										. esc_attr($sold_product_schedule_sticker_image_height) 
+										.'"></span>';
 							}	
 						}																																	
 						elseif($sold_product_settings['enable_sold_product_sticker']=="yes") {
@@ -2133,62 +2139,62 @@ class Woo_Stickers_By_Webline_Public {
 
 								$classSold = "woosticker woosticker_sold custom_sticker_text";
 								echo '<span class="'
-										.$classSold . $classSoldPosition . $classSoldType .'" 
+										. esc_attr($classSold) . esc_attr($classSoldPosition) . esc_attr($classSoldType) .'" 
 										style="
 											background-color:' . esc_attr($sold_product_settings["sold_product_custom_text_backcolor"]) . '; 
 											color:' . esc_attr($sold_product_settings["sold_product_custom_text_fontcolor"]) . ';'
-											. $sold_product_text_padding_top 
-											. $sold_product_text_padding_right 
-											. $sold_product_text_padding_bottom 
-											. $sold_product_text_padding_left 
-											. $sold_product_sticker_top 
-											. $sold_product_sticker_left_right 
-											. $sold_product_sticker_rotate 
-											. "animation-name: $animation_name_sold;"
-											. "animation-duration: $sold_product_sticker_animation_delay;"
-											. "animation-iteration-count: $sold_product_sticker_animation_iteration_count;"
-											. "animation-direction: $sold_product_sticker_animation_direction;"
+											. esc_attr($sold_product_text_padding_top) 
+											. esc_attr($sold_product_text_padding_right) 
+											. esc_attr($sold_product_text_padding_bottom) 
+											. esc_attr($sold_product_text_padding_left) 
+											. esc_attr($sold_product_sticker_top) 
+											. esc_attr($sold_product_sticker_left_right) 
+											. esc_attr($sold_product_sticker_rotate) 
+											. "animation-name: " . esc_attr($animation_name_sold) . ";"
+											. "animation-duration: " . esc_attr($sold_product_sticker_animation_delay) . ";"
+											. "animation-iteration-count: " . esc_attr($sold_product_sticker_animation_iteration_count) . ";"
+											. "animation-direction: " . esc_attr($sold_product_sticker_animation_direction) . ";"
 											.'">'. esc_attr($sold_product_settings["sold_product_custom_text"]) .'</span>';
 
 							} else if($sold_product_settings['sold_product_option'] == "image") {
 								if($sold_product_settings['sold_product_custom_sticker']!='') {
 									$classSold = "woosticker woosticker_sold custom_sticker_image";
 									echo '<span class="' 
-										. $classSold . $classSoldPosition . $classSoldType .'" 
+										. esc_attr($classSold) . esc_attr($classSoldPosition) . esc_attr($classSoldType) .'" 
 										style="
 											background-image:url('.esc_url($sold_product_settings['sold_product_custom_sticker']).'); '
-											. $sold_product_sticker_top 
-											. $sold_product_sticker_left_right 
-											. $sold_product_sticker_image_width 
-											. $sold_product_sticker_image_height 
-											. $sold_product_sticker_rotate 
-											. "animation-name: $animation_name_sold;"
-											. "animation-duration: $sold_product_sticker_animation_delay;"
-											. "animation-iteration-count: $sold_product_sticker_animation_iteration_count;"
-											. "animation-direction: $sold_product_sticker_animation_direction;"
+											. esc_attr($sold_product_sticker_top) 
+											. esc_attr($sold_product_sticker_left_right) 
+											. esc_attr($sold_product_sticker_image_width) 
+											. esc_attr($sold_product_sticker_image_height) 
+											. esc_attr($sold_product_sticker_rotate) 
+											. "animation-name: " . esc_attr($animation_name_sold) . ";"
+											. "animation-duration: " . esc_attr($sold_product_sticker_animation_delay) . ";"
+											. "animation-iteration-count: " . esc_attr($sold_product_sticker_animation_iteration_count) . ";"
+											. "animation-direction: " . esc_attr($sold_product_sticker_animation_direction) . ";"
 											.' "></span>';
 								} else {
 									$classSold = (($sold_product_settings['sold_product_custom_sticker']=='')?(($sold_product_settings['enable_sold_product_style'] == "ribbon") ? (($sold_product_settings['sold_product_position']=='left')?" woosticker woosticker_sold soldout_ribbon_left ":" woosticker woosticker_sold soldout_ribbon_right ") : (($sold_product_settings['sold_product_position']=='left')?" woosticker woosticker_sold soldout_round_left ":" woosticker woosticker_sold soldout_round_right ")):"woosticker woosticker_sold custom_sticker_image");
 									echo '<span class="'
-										.$classSold . $classSoldPosition .'"
+										. esc_attr($classSold) . esc_attr($classSoldPosition) .'"
 										style="' 
-											. $sold_product_sticker_top 
-											. $sold_product_sticker_left_right 
-											. $sold_product_sticker_image_width 
-											. $sold_product_sticker_image_height 
-											. $sold_product_sticker_rotate 
-											. "animation-name: $animation_name_sold;"
-											. "animation-duration: $sold_product_sticker_animation_delay;"
-											. "animation-iteration-count: $sold_product_sticker_animation_iteration_count;"
-											. "animation-direction: $sold_product_sticker_animation_direction;"
-											.'">'. __('Sold Out', 'woo-stickers-by-webline' ) .'</span>';
+											. esc_attr($sold_product_sticker_top) 
+											. esc_attr($sold_product_sticker_left_right) 
+											. esc_attr($sold_product_sticker_image_width) 
+											. esc_attr($sold_product_sticker_image_height) 
+											. esc_attr($sold_product_sticker_rotate) 
+											. "animation-name: " . esc_attr($animation_name_sold) . ";"
+											. "animation-duration: " . esc_attr($sold_product_sticker_animation_delay) . ";"
+											. "animation-iteration-count: " . esc_attr($sold_product_sticker_animation_iteration_count) . ";"
+											. "animation-direction: " . esc_attr($sold_product_sticker_animation_direction) . ";"
+											.'"></span>';
 								}
 							} else {
 								$classSold = (($sold_product_settings['sold_product_custom_sticker']=='')?(($sold_product_settings['enable_sold_product_style'] == "ribbon") ? (($sold_product_settings['sold_product_position']=='left')?" woosticker woosticker_sold soldout_ribbon_left ":" woosticker woosticker_sold soldout_ribbon_right ") : (($sold_product_settings['sold_product_position']=='left')?" woosticker woosticker_sold soldout_round_left ":" woosticker woosticker_sold soldout_round_right ")):"woosticker woosticker_sold custom_sticker_image");
 								echo '<span class="'
-										.$classSold . $classSoldPosition .'" 
+										.esc_attr($classSold . $classSoldPosition) .'" 
 										style="' 
-											. $sold_product_sticker_top 
+											. esc_attr($sold_product_sticker_top 
 											. $sold_product_sticker_left_right 
 											. $sold_product_sticker_image_width 
 											. $sold_product_sticker_image_height 
@@ -2197,7 +2203,7 @@ class Woo_Stickers_By_Webline_Public {
 											. "animation-duration: $sold_product_sticker_animation_delay;"
 											. "animation-iteration-count: $sold_product_sticker_animation_iteration_count;"
 											. "animation-direction: $sold_product_sticker_animation_direction;"
-											.'">'. __('Sold Out', 'woo-stickers-by-webline' ) .'</span>';
+											.'"></span>');
 							}
 							$this->sold_out = true;//Set as SOLD OUT
 						}
@@ -2215,51 +2221,53 @@ class Woo_Stickers_By_Webline_Public {
 						
 								$classSold = "woosticker woosticker_sold custom_sticker_text";
 								echo '<span class="'
-										.$classSold . $classSoldPosition . $classSoldTypeSch .'" 
+										.esc_attr($classSold . $classSoldPosition . $classSoldTypeSch) .'" 
 										style="
 											background-color:' . esc_attr($sold_product_settings["sold_product_schedule_custom_text_backcolor"]) . '; 
 											color:' . esc_attr($sold_product_settings["sold_product_schedule_custom_text_fontcolor"]) . ';'
-											. $sold_product_schedule_text_padding_top 
+											. esc_attr($sold_product_schedule_text_padding_top 
 											. $sold_product_schedule_text_padding_right 
 											. $sold_product_schedule_text_padding_bottom 
 											. $sold_product_schedule_text_padding_left 
 											. $sold_product_sticker_top 
-											. $sold_product_sticker_left_right 
+											. $sold_product_sticker_left_right) 
 											.'">'. esc_attr($sold_product_settings["sold_product_schedule_custom_text"]) .'</span>';
 							
 							} else if($sold_product_settings['sold_product_schedule_sticker_option'] == "image_schedule") {
 								if($sold_product_settings['sold_product_schedule_custom_sticker']!='') {
 									$classSold = "woosticker woosticker_sold custom_sticker_image";
 									echo '<span class="' 
-										. $classSold . $classSoldPosition . $classSoldTypeSch .'" 
+										. esc_attr($classSold . $classSoldPosition . $classSoldTypeSch) .'" 
 										style="
-											background-image:url('.esc_url($sold_product_settings['sold_product_schedule_custom_sticker']).'); '
-											. $sold_product_sticker_top 
+											background-image: url(' . esc_url($sold_product_settings['sold_product_schedule_custom_sticker']) . ');
+											background-repeat: no-repeat; background-position: center;
+											background-size: ' . esc_attr($sold_product_settings['sold_product_schedule_sticker_image_width']) . 'px ' . esc_attr($sold_product_settings['sold_product_schedule_sticker_image_height']) . 'px;'	
+											. esc_attr($sold_product_sticker_top 
 											. $sold_product_sticker_left_right 
 											. $sold_product_schedule_sticker_image_width 
-											. $sold_product_schedule_sticker_image_height 
+											. $sold_product_schedule_sticker_image_height)
 											.' "></span>';
 								} else {
 									$classSold = (($sold_product_settings['sold_product_schedule_custom_sticker']=='')?(($sold_product_settings['enable_sold_schedule_product_style'] == "ribbon") ? (($sold_product_settings['sold_product_position']=='left')?" woosticker woosticker_sold soldout_ribbon_left ":" woosticker woosticker_sold soldout_ribbon_right ") : (($sold_product_settings['sold_product_position']=='left')?" woosticker woosticker_sold soldout_round_left ":" woosticker woosticker_sold soldout_round_right ")):"woosticker woosticker_sold custom_sticker_image");
 									echo '<span class="'
-										.$classSold . $classSoldPosition .'"
+										.esc_attr($classSold . $classSoldPosition) .'"
 										style="' 
-											. $sold_product_sticker_top 
+											. esc_attr($sold_product_sticker_top 
 											. $sold_product_sticker_left_right 
 											. $sold_product_schedule_sticker_image_width 
-											. $sold_product_schedule_sticker_image_height 
-											.'">'. __('Sold Out', 'woo-stickers-by-webline' ) .'</span>';
+											. $sold_product_schedule_sticker_image_height)
+											.'"></span>';
 								}
 							} else {
 							$classSold = (($sold_product_settings['sold_product_schedule_custom_sticker']=='')?(($sold_product_settings['enable_sold_schedule_product_style'] == "ribbon") ? (($sold_product_settings['sold_product_position']=='left')?" woosticker woosticker_sold soldout_ribbon_left ":" woosticker woosticker_sold soldout_ribbon_right ") : (($sold_product_settings['sold_product_position']=='left')?" woosticker woosticker_sold soldout_round_left ":" woosticker woosticker_sold soldout_round_right ")):"woosticker woosticker_sold custom_sticker_image");
 							echo '<span class="'
-									.$classSold . $classSoldPosition .'" 
+									.esc_attr($classSold . $classSoldPosition) .'" 
 									style="' 
-										. $sold_product_sticker_top 
+										. esc_attr($sold_product_sticker_top 
 										. $sold_product_sticker_left_right 
 										. $sold_product_schedule_sticker_image_width 
-										. $sold_product_schedule_sticker_image_height 
-										.'">'. __('Sold Out', 'woo-stickers-by-webline' ) .'</span>';
+										. $sold_product_schedule_sticker_image_height )
+										.'"></span>';
 							}	
 						}	
 
@@ -2270,11 +2278,11 @@ class Woo_Stickers_By_Webline_Public {
 
 									$classSold = "woosticker woosticker_sold custom_sticker_text";		
 									echo '<span class="'
-										.$classSold . $classSoldPosition . $classSoldType .'" 
+										.esc_attr($classSold . $classSoldPosition . $classSoldType) .'" 
 										style="
 											background-color:' . esc_attr($sold_product_settings["sold_product_custom_text_backcolor"]) . '; 
 											color:' . esc_attr($sold_product_settings["sold_product_custom_text_fontcolor"]) . ';'
-											. $sold_product_text_padding_top 
+											. esc_attr($sold_product_text_padding_top 
 											. $sold_product_text_padding_right 
 											. $sold_product_text_padding_bottom 
 											. $sold_product_text_padding_left 
@@ -2284,15 +2292,15 @@ class Woo_Stickers_By_Webline_Public {
 											. "animation-name: $animation_name_sold;"
 											. "animation-duration: $sold_product_sticker_animation_delay;"
 											. "animation-iteration-count: $sold_product_sticker_animation_iteration_count;"
-											. "animation-direction: $sold_product_sticker_animation_direction;"
+											. "animation-direction: $sold_product_sticker_animation_direction;")
 											.'">'. esc_attr($sold_product_settings["sold_product_custom_text"]) .'</span>';
 
 								}else{
 									$classSold = (($sold_product_settings['sold_product_custom_sticker']=='')?(($sold_product_settings['enable_sold_product_style'] == "ribbon") ? (($sold_product_settings['sold_product_position']=='left')?" woosticker woosticker_sold soldout_ribbon_left ":" woosticker woosticker_sold soldout_ribbon_right ") : (($sold_product_settings['sold_product_position']=='left')?" woosticker woosticker_sold soldout_round_left ":" woosticker woosticker_sold soldout_round_right ")):"woosticker woosticker_sold custom_sticker_image");
 									echo '<span class="'
-											.$classSold . $classSoldPosition .'" 
+											.esc_attr($classSold . $classSoldPosition) .'" 
 											style="' 
-												. $sold_product_sticker_top
+												. esc_attr($sold_product_sticker_top
 												. $sold_product_sticker_left_right 
 												. $sold_product_sticker_image_width 
 												. $sold_product_sticker_image_height 
@@ -2300,17 +2308,19 @@ class Woo_Stickers_By_Webline_Public {
 												. "animation-name: $animation_name_sold;"
 												. "animation-duration: $sold_product_sticker_animation_delay;"
 												. "animation-iteration-count: $sold_product_sticker_animation_iteration_count;"
-												. "animation-direction: $sold_product_sticker_animation_direction;"
-												.'">'. __('Sold Out', 'woo-stickers-by-webline' ) .'</span>';
+												. "animation-direction: $sold_product_sticker_animation_direction;")
+												.'"></span>';
 								}
 							} else if($sold_product_settings['sold_product_option'] == "image") {
 								if($sold_product_settings['sold_product_custom_sticker']!='') {
 									$classSold = "woosticker woosticker_sold custom_sticker_image";
 									echo '<span class="' 
-											. $classSold . $classSoldPosition . $classSoldType .'" 
+											. esc_attr($classSold . $classSoldPosition . $classSoldType) .'" 
 											style="
-												background-image:url('.esc_url($sold_product_settings['sold_product_custom_sticker']).'); '
-												. $sold_product_sticker_top 
+												background-image: url(' . esc_url($sold_product_settings['sold_product_custom_sticker']) . ');
+    											background-repeat: no-repeat; background-position: center;
+    											background-size: ' . esc_attr($sold_product_settings['sold_product_sticker_image_width']) . 'px ' . esc_attr($sold_product_settings['sold_product_sticker_image_height']) . 'px;'
+												. esc_attr($sold_product_sticker_top 
 												. $sold_product_sticker_left_right 
 												. $sold_product_sticker_image_width 
 												. $sold_product_sticker_image_height 
@@ -2318,40 +2328,40 @@ class Woo_Stickers_By_Webline_Public {
 												. "animation-name: $animation_name_sold;"
 												. "animation-duration: $sold_product_sticker_animation_delay;"
 												. "animation-iteration-count: $sold_product_sticker_animation_iteration_count;"
-												. "animation-direction: $sold_product_sticker_animation_direction;"
+												. "animation-direction: $sold_product_sticker_animation_direction;")
 												.' "></span>';
-								} else {
+																} else {
 									$classSold = (($sold_product_settings['sold_product_custom_sticker']=='')?(($sold_product_settings['enable_sold_product_style'] == "ribbon") ? (($sold_product_settings['sold_product_position']=='left')?" woosticker woosticker_sold soldout_ribbon_left ":" woosticker woosticker_sold soldout_ribbon_right ") : (($sold_product_settings['sold_product_position']=='left')?" woosticker woosticker_sold soldout_round_left ":" woosticker woosticker_sold soldout_round_right ")):"woosticker woosticker_sold custom_sticker_image");
 									echo '<span class="'
-											.$classSold . $classSoldPosition .'" 
-											style="' 
-												.$sold_product_sticker_top 
-												. $sold_product_sticker_left_right 
-												. $sold_product_sticker_image_width 
-												. $sold_product_sticker_image_height 
-												. $sold_product_sticker_rotate 
-												. "animation-name: $animation_name_sold;"
-												. "animation-duration: $sold_product_sticker_animation_delay;"
-												. "animation-iteration-count: $sold_product_sticker_animation_iteration_count;"
-												. "animation-direction: $sold_product_sticker_animation_direction;"
-												.'">'. __('Sold Out', 'woo-stickers-by-webline' ) .'</span>';
+										. esc_attr($classSold) . esc_attr($classSoldPosition) .'"
+										style="' 
+											. esc_attr($sold_product_sticker_top) 
+											. esc_attr($sold_product_sticker_left_right) 
+											. esc_attr($sold_product_sticker_image_width) 
+											. esc_attr($sold_product_sticker_image_height) 
+											. esc_attr($sold_product_sticker_rotate) 
+											. "animation-name: " . esc_attr($animation_name_sold) . ";"
+											. "animation-duration: " . esc_attr($sold_product_sticker_animation_delay) . ";"
+											. "animation-iteration-count: " . esc_attr($sold_product_sticker_animation_iteration_count) . ";"
+											. "animation-direction: " . esc_attr($sold_product_sticker_animation_direction) . ";"
+											.'">' .'</span>';
 								}
 							} else {
 								$classSold = (($sold_product_settings['sold_product_custom_sticker']=='')?(($sold_product_settings['enable_sold_product_style'] == "ribbon") ? (($sold_product_settings['sold_product_position']=='left')?" woosticker woosticker_sold soldout_ribbon_left ":" woosticker woosticker_sold soldout_ribbon_right ") : (($sold_product_settings['sold_product_position']=='left')?" woosticker woosticker_sold soldout_round_left ":" woosticker woosticker_sold soldout_round_right ")):"woosticker woosticker_sold custom_sticker_image");
 								echo '<span class="'
-											.$classSold 
-											. $classSoldPosition .'" 
+											. esc_attr($classSold) 
+											. esc_attr($classSoldPosition) .'" 
 											style="' 
-											.$sold_product_sticker_top 
-											. $sold_product_sticker_left_right 
-											. $sold_product_sticker_image_width 
-											. $sold_product_sticker_image_height 
-											. $sold_product_sticker_rotate 
-											. "animation-name: $animation_name_sold;"
-											. "animation-duration: $sold_product_sticker_animation_delay;"
-											. "animation-iteration-count: $sold_product_sticker_animation_iteration_count;"
-											. "animation-direction: $sold_product_sticker_animation_direction;"
-											.'">'. __('Sold Out', 'woo-stickers-by-webline' ) .'</span>';
+											. esc_attr($sold_product_sticker_top) 
+											. esc_attr($sold_product_sticker_left_right) 
+											. esc_attr($sold_product_sticker_image_width) 
+											. esc_attr($sold_product_sticker_image_height) 
+											. esc_attr($sold_product_sticker_rotate) 
+											. "animation-name: " . esc_attr($animation_name_sold) . ";"
+											. "animation-duration: " . esc_attr($sold_product_sticker_animation_delay) . ";"
+											. "animation-iteration-count: " . esc_attr($sold_product_sticker_animation_iteration_count) . ";"
+											. "animation-direction: " . esc_attr($sold_product_sticker_animation_direction) . ";"
+											.'"></span>';
 							}
 
 							$this->sold_out = true;//Set as SOLD OUT
@@ -2362,19 +2372,19 @@ class Woo_Stickers_By_Webline_Public {
 				?>
 					<style>
 						<?php if($sold_product_sticker_animation_type == 'zoominout'){ ?>
-							@keyframes <?php echo $animation_name_sold; ?> {
+							@keyframes <?php echo esc_attr($animation_name_sold); ?> {
 								0% {
-									transform: scale(<?php echo $sold_product_sticker_animation_scale ?>) rotate(0deg) translate(0, 0);
+									transform: scale(<?php echo esc_attr($sold_product_sticker_animation_scale) ?>) rotate(0deg) translate(0, 0);
 								}
 							}
 						<?php } elseif($sold_product_sticker_animation_type == 'spin'){?>
-							@keyframes <?php echo $animation_name_sold; ?> {
+							@keyframes <?php echo esc_attr($animation_name_sold); ?> {
 								100% {
 									transform: rotate(360deg) translate(0, 0) ;
 								}
 							}
 						<?php } elseif($sold_product_sticker_animation_type == 'swing'){?>
-							@keyframes <?php echo $animation_name_sold; ?> {
+							@keyframes <?php echo esc_attr($animation_name_sold); ?> {
 								0% {
 									transform: rotate(0deg);
 								}
@@ -2385,7 +2395,7 @@ class Woo_Stickers_By_Webline_Public {
 									transform: rotate(-20deg);
 								}
 						<?php } elseif($sold_product_sticker_animation_type == 'updown'){?>
-							@keyframes <?php echo $animation_name_sold; ?> {
+							@keyframes <?php echo esc_attr($animation_name_sold); ?> {
 								0%   {
 									top:0px;
 								}
@@ -2396,7 +2406,7 @@ class Woo_Stickers_By_Webline_Public {
 									top:0px;
 								}
 						<?php } elseif($sold_product_sticker_animation_type == 'leftright'){?>
-							@keyframes <?php echo $animation_name_sold; ?> {
+							@keyframes <?php echo esc_attr($animation_name_sold); ?> {
 								0%   {
 									left:0px;
 									right: auto;
@@ -2519,75 +2529,109 @@ class Woo_Stickers_By_Webline_Public {
 				$cust_product_schedule_text_padding_left = isset($cust_product_settings['cust_product_schedule_text_padding_left']) && $cust_product_settings['cust_product_schedule_text_padding_left'] !== '' ? absint($cust_product_settings['cust_product_schedule_text_padding_left']) . 'px' : '';
 				$cust_product_schedule_text_padding_left = !empty($cust_product_schedule_text_padding_left) ? "padding-left: $cust_product_schedule_text_padding_left;" : "";
 
+				$sticker_url = !empty($cust_product_settings['cust_product_schedule_custom_sticker'])? $cust_product_settings['cust_product_schedule_custom_sticker']: $cust_product_settings['cust_product_custom_sticker'];
+
 				if ($enable_cust_product_schedule_sticker == "yes" && (($timestamp_start <= $current_timestamp) && ($timestamp_end >= $current_timestamp))) {
 
-					if($cust_product_settings['cust_product_schedule_sticker_option'] == "text_schedule" && $cust_product_settings['cust_product_schedule_custom_text']) {
+					if($cust_product_settings['cust_product_schedule_sticker_option'] == "text_schedule" && !empty($cust_product_settings['cust_product_schedule_custom_text'])) {
 						$classCustom = "woosticker woosticker_custom custom_sticker_text";	
-						echo $span_class_custom_woocommerce_span = '<span class="'
-																	.$classCustom . $classCustomPosition . $classCustomTypeSch . '" 
-																	style="
-																		background-color:' . esc_attr($cust_product_settings["cust_product_schedule_custom_text_backcolor"]) . ';
-																		color:' . esc_attr($cust_product_settings["cust_product_schedule_custom_text_fontcolor"]) . '; ' 
-																		. $cust_product_text_padding_top 
-																		. $cust_product_text_padding_right 
-																		. $cust_product_text_padding_bottom 
-																		. $cust_product_text_padding_left 
-																		. $cust_product_sticker_top 
-																		. $cust_product_sticker_left_right 
-																		.' "> '. esc_attr($cust_product_settings["cust_product_schedule_custom_text"]) .'</span>';
+						echo '<span class="'
+							. esc_attr($classCustom) . esc_attr($classCustomPosition) . esc_attr($classCustomTypeSch) . '" 
+							style="
+								background-color:' . esc_attr($cust_product_settings["cust_product_schedule_custom_text_backcolor"]) . ';
+								color:' . esc_attr($cust_product_settings["cust_product_schedule_custom_text_fontcolor"]) . '; ' 
+								. esc_attr($cust_product_schedule_text_padding_top) 
+								. esc_attr($cust_product_schedule_text_padding_right) 
+								. esc_attr($cust_product_schedule_text_padding_bottom) 
+								. esc_attr($cust_product_schedule_text_padding_left) 
+								. esc_attr($cust_product_sticker_top) 
+								. esc_attr($cust_product_sticker_left_right) 
+								.' "> '. esc_attr($cust_product_settings["cust_product_schedule_custom_text"]) .'</span>';
 	
-					} else if($cust_product_settings['cust_product_schedule_sticker_option'] == "image_schedule") {
+					} else{
 						$classCustom = "woosticker woosticker_custom custom_sticker_image";
-						echo $span_class_custom_woocommerce_span =  '<span class="' 
-																		. $classCustom . $classCustomPosition . $classCustomTypeSch . '" 
-																		style="
-																			background-image:url('.esc_url($cust_product_settings['cust_product_schedule_custom_sticker']).');'
-																			. $cust_product_sticker_top 
-																			. $cust_product_sticker_left_right 
-																			. $cust_product_sticker_image_width 
-																			. $cust_product_sticker_image_height 
-																			.'"></span>';
+						if(!empty($sticker_url)){
+							$sticker_url_schedule = $sticker_url;
+						}else{
+							$images_base = plugin_dir_url(__FILE__) . 'images/';
+							if ($classCustomType === 'woosticker_ribbon') {
+								$side = ($cust_product_settings['cust_product_position'] === 'left') ? 'left' : 'right';
+								$file = "default-custom-placeholder-ribbon-{$side}.svg";
+							} else {
+								$file = 'default-custom-placeholder-round.svg';
+							}
+							$sticker_url_schedule = esc_url($images_base . $file);
+						}
+						echo '<span class="' 
+							. esc_attr($classCustom) . esc_attr($classCustomPosition) . esc_attr($classCustomTypeSch) . '" 
+							style="
+								
+
+								background-image: url(' . esc_url($sticker_url_schedule) . ');
+    								background-repeat: no-repeat; background-position: center;
+    								background-size: ' . esc_attr($cust_product_settings['cust_product_schedule_sticker_image_width']) . 'px ' . esc_attr($cust_product_settings['cust_product_schedule_sticker_image_height']) . 'px;'
+                                    
+								. esc_attr($cust_product_sticker_top) 
+								. esc_attr($cust_product_sticker_left_right) 
+								. esc_attr($cust_product_sticker_image_width) 
+								. esc_attr($cust_product_sticker_image_height) 
+								.'"></span>';
 					}
 
 				}
 				else{
 
-					if($cust_product_settings['cust_product_option'] == "text" && $cust_product_settings['cust_product_custom_text']) {
+					if($cust_product_settings['cust_product_option'] == "text" && !empty($cust_product_settings['cust_product_custom_text'])) {
 						$classCustom = "woosticker woosticker_custom custom_sticker_text";	
-						echo $span_class_custom_woocommerce_span = '<span class="'
-																	.$classCustom . $classCustomPosition . $classCustomType . '" 
-																	style="
-																		background-color:' . esc_attr($cust_product_settings["cust_product_custom_text_backcolor"]) . ';
-																		color:' . esc_attr($cust_product_settings["cust_product_custom_text_fontcolor"]) . '; ' 
-																		. $cust_product_text_padding_top 
-																		. $cust_product_text_padding_right 
-																		. $cust_product_text_padding_bottom 
-																		. $cust_product_text_padding_left 
-																		. $cust_product_sticker_top 
-																		. $cust_product_sticker_left_right 
-																		. $cust_product_sticker_rotate 
-																		. "animation-name: $animation_name_custom;"
-																		. "animation-duration: $cust_product_sticker_animation_delay;"
-																		. "animation-iteration-count: $cust_product_sticker_animation_iteration_count;"
-																		. "animation-direction: $cust_product_sticker_animation_direction;"
-																		.' "> '. esc_attr($cust_product_settings["cust_product_custom_text"]) .'</span>';
+						echo '<span class="'
+							. esc_attr($classCustom) . esc_attr($classCustomPosition) . esc_attr($classCustomType) . '" 
+							style="
+								background-color:' . esc_attr($cust_product_settings["cust_product_custom_text_backcolor"]) . ';
+								color:' . esc_attr($cust_product_settings["cust_product_custom_text_fontcolor"]) . '; ' 
+								. esc_attr($cust_product_text_padding_top) 
+								. esc_attr($cust_product_text_padding_right) 
+								. esc_attr($cust_product_text_padding_bottom) 
+								. esc_attr($cust_product_text_padding_left) 
+								. esc_attr($cust_product_sticker_top) 
+								. esc_attr($cust_product_sticker_left_right) 
+								. esc_attr($cust_product_sticker_rotate) 
+								. "animation-name: " . esc_attr($animation_name_custom) . ";"
+								. "animation-duration: " . esc_attr($cust_product_sticker_animation_delay) . ";"
+								. "animation-iteration-count: " . esc_attr($cust_product_sticker_animation_iteration_count) . ";"
+								. "animation-direction: " . esc_attr($cust_product_sticker_animation_direction) . ";"
+								.' "> '. esc_attr($cust_product_settings["cust_product_custom_text"]) .'</span>';
 	
-					} else if($cust_product_settings['cust_product_option'] == "image") {
+					} else {
 						$classCustom = "woosticker woosticker_custom custom_sticker_image";
-						echo $span_class_custom_woocommerce_span =  '<span class="' 
-																		. $classCustom . $classCustomPosition . $classCustomType . '" 
-																		style="
-																			background-image:url('.esc_url($cust_product_settings['cust_product_custom_sticker']).');'
-																			. $cust_product_sticker_top 
-																			. $cust_product_sticker_left_right 
-																			. $cust_product_sticker_image_width 
-																			. $cust_product_sticker_image_height 
-																			. $cust_product_sticker_rotate 
-																			. "animation-name: $animation_name_custom;"
-																			. "animation-duration: $cust_product_sticker_animation_delay;"
-																			. "animation-iteration-count: $cust_product_sticker_animation_iteration_count;"
-																			. "animation-direction: $cust_product_sticker_animation_direction;"
-																			.'"></span>';
+						if(!empty($cust_product_settings['cust_product_custom_sticker']) ){
+							$sticker_url = esc_url($cust_product_settings['cust_product_custom_sticker']);
+						}else{
+							$images_base = plugin_dir_url(__FILE__) . 'images/';
+							if ($classCustomType === 'woosticker_ribbon') {
+								$side = ($cust_product_settings['cust_product_position'] === 'left') ? 'left' : 'right';
+								$file = "default-custom-placeholder-ribbon-{$side}.svg";
+							} else {
+								$file = 'default-custom-placeholder-round.svg';
+							}
+							$sticker_url = esc_url($images_base . $file);
+						}
+
+						echo '<span class="' 
+							. esc_attr($classCustom) . esc_attr($classCustomPosition) . esc_attr($classCustomType) . '" 
+							style="
+								background-image: url(' . esc_url($sticker_url) . ');
+    								background-repeat: no-repeat; background-position: center;
+    								background-size: ' . esc_attr($cust_product_settings['cust_product_sticker_image_width']) . 'px ' . esc_attr($cust_product_settings['cust_product_sticker_image_height']) . 'px;'
+								. esc_attr($cust_product_sticker_top) 
+								. esc_attr($cust_product_sticker_left_right) 
+								. esc_attr($cust_product_sticker_image_width) 
+								. esc_attr($cust_product_sticker_image_height) 
+								. esc_attr($cust_product_sticker_rotate) 
+								. "animation-name: " . esc_attr($animation_name_custom) . ";"
+								. "animation-duration: " . esc_attr($cust_product_sticker_animation_delay) . ";"
+								. "animation-iteration-count: " . esc_attr($cust_product_sticker_animation_iteration_count) . ";"
+								. "animation-direction: " . esc_attr($cust_product_sticker_animation_direction) . ";"
+								.'"></span>';
 					}
 
 				}
@@ -2595,19 +2639,19 @@ class Woo_Stickers_By_Webline_Public {
 				?>
 					<style>
 						<?php if($cust_product_sticker_animation_type == 'zoominout'){ ?>
-							@keyframes <?php echo $animation_name_custom; ?> {
+							@keyframes <?php echo esc_attr($animation_name_custom); ?> {
 								0% {
-									transform: scale(<?php echo $cust_product_sticker_animation_scale ?>) rotate(0deg) translate(0, 0);
+									transform: scale(<?php echo esc_attr($cust_product_sticker_animation_scale) ?>) rotate(0deg) translate(0, 0);
 								}
 							}
 						<?php } elseif($cust_product_sticker_animation_type == 'spin'){?>
-							@keyframes <?php echo $animation_name_custom; ?> {
+							@keyframes <?php echo esc_attr($animation_name_custom); ?> {
 								100% {
 									transform: rotate(360deg) translate(0, 0) ;
 								}
 							}
 						<?php } elseif($cust_product_sticker_animation_type == 'swing'){?>
-							@keyframes <?php echo $animation_name_custom; ?> {
+							@keyframes <?php echo esc_attr($animation_name_custom); ?> {
 								0% {
 									transform: rotate(0deg);
 								}
@@ -2618,7 +2662,7 @@ class Woo_Stickers_By_Webline_Public {
 									transform: rotate(-20deg);
 								}
 						<?php } elseif($cust_product_sticker_animation_type == 'updown'){?>
-							@keyframes <?php echo $animation_name_custom; ?> {
+							@keyframes <?php echo esc_attr($animation_name_custom); ?> {
 								0%   {
 									top:0px;
 								}
@@ -2629,7 +2673,7 @@ class Woo_Stickers_By_Webline_Public {
 									top:0px;
 								}
 						<?php } elseif($cust_product_sticker_animation_type == 'leftright'){?>
-							@keyframes <?php echo $animation_name_custom; ?> {
+							@keyframes <?php echo esc_attr($animation_name_custom); ?> {
 								0%   {
 									left:0px;
 									right: auto;
@@ -2814,24 +2858,51 @@ class Woo_Stickers_By_Webline_Public {
 					//Check if sticker text exists
 					if( $category_product_schedule_option == 'text_schedule' && !empty( $category_product_schedule_custom_text ) ) {
 						echo '<span class="'
-								. $sticker_class .'custom_sticker_text" style="background-color:'
+								. esc_attr($sticker_class_sch) .'custom_sticker_text" style="background-color:'
 								. esc_attr($category_schedule_product_custom_text_backcolor) .'; color:'
 								. esc_attr($category_schedule_product_custom_text_fontcolor) .'; '
-								. $sticker_top 
-								. $sticker_left_right 
-								. $category_product_schedule_custom_text_padding_top 
-								. $category_product_schedule_custom_text_padding_right 
-								. $category_product_schedule_custom_text_padding_bottom 
-								. $category_product_schedule_custom_text_padding_left
+								. esc_attr($sticker_top) 
+								. esc_attr($sticker_left_right) 
+								. esc_attr($category_product_schedule_custom_text_padding_top) 
+								. esc_attr($category_product_schedule_custom_text_padding_right) 
+								. esc_attr($category_product_schedule_custom_text_padding_bottom) 
+								. esc_attr($category_product_schedule_custom_text_padding_left)
 								.'">'. esc_attr( $category_product_schedule_custom_text ) .'</span>';
 
 					} elseif ( !empty( $sticker_image_sch[0] ) ) {//Check if sticker image exists
 
 						echo '<span class="'
-								. $sticker_class .'custom_sticker_image" style="background-image:url('. esc_url($sticker_image_sch[0]) .');'
-								. $sticker_top 
-								. $category_schedule_sticker_image_width 
-								. $category_schedule_sticker_image_height
+								. esc_attr($sticker_class_sch) .'custom_sticker_image" style="
+								background-image: url(' . esc_url($sticker_image_sch[0]) . ');
+    							background-repeat: no-repeat; background-position: center;
+    							background-size: ' . esc_attr(get_term_meta( $category->term_id, 'category_schedule_sticker_image_width', true )) . 'px ' . esc_attr(get_term_meta( $category->term_id, 'category_schedule_sticker_image_height', true )) . 'px;'
+								. esc_attr($sticker_top) 
+								. esc_attr($category_schedule_sticker_image_width) 
+								. esc_attr($category_schedule_sticker_image_height)
+								. '"></span>';
+					} else{
+						$images_base = plugin_dir_url(__FILE__) . 'images/';
+						if ($sticker_type === 'woosticker_ribbon') {
+							$side = ($sticker_pos === 'left') ? 'left' : 'right';
+							$file = "default-custom-placeholder-ribbon-{$side}.svg";
+						} else {
+							$file = 'default-custom-placeholder-round.svg';
+						}
+						$sticker_url = esc_url($images_base . $file);
+
+						echo '<span class="'
+								. esc_attr($sticker_class_sch) .'custom_sticker_image" style="
+								background-image: url(' . esc_url($sticker_url) . ');
+    							background-repeat: no-repeat; background-position: center;
+    							background-size: ' . esc_attr(get_term_meta( $category->term_id, 'category_schedule_sticker_image_width', true )) . 'px ' . esc_attr(get_term_meta( $category->term_id, 'category_schedule_sticker_image_height', true )) . 'px;'
+								. esc_attr($sticker_top) 
+								. esc_attr($category_schedule_sticker_image_width) 
+								. esc_attr($category_schedule_sticker_image_height)
+								. esc_attr($category_sticker_sticker_rotate) 
+								. "animation-name: " . esc_attr($category_sticker_animation) . ";"
+								. "animation-duration: " . esc_attr($category_sticker_sticker_category_animation_type_delay) . ";"
+								. "animation-iteration-count: " . esc_attr($category_sticker_sticker_category_animation_iteration_count) . ";"
+								. "animation-direction: " . esc_attr($category_sticker_sticker_category_animation_direction) . ";"
 								. '"></span>';
 					}
 
@@ -2839,34 +2910,62 @@ class Woo_Stickers_By_Webline_Public {
 					//Check if sticker text exists
 					if( $sticker_option == 'text' && !empty( $sticker_text ) ) {
 						echo '<span class="'
-								. $sticker_class .'custom_sticker_text" style="background-color:'
+								. esc_attr($sticker_class) .'custom_sticker_text" style="background-color:'
 								. esc_attr($sticker_text_backcolor) .'; color:'
 								. esc_attr($sticker_text_fontcolor) .'; '
-								. $sticker_top 
-								. $sticker_left_right 
-								. $category_sticker_text_padding_top 
-								. $category_sticker_text_padding_right 
-								. $category_sticker_text_padding_bottom 
-								. $category_sticker_text_padding_left
-								. $category_sticker_sticker_rotate 
-								. "animation-name: $category_sticker_animation;"
-								. "animation-duration: $category_sticker_sticker_category_animation_type_delay;"
-								. "animation-iteration-count: $category_sticker_sticker_category_animation_iteration_count;"
-								. "animation-direction: $category_sticker_sticker_category_animation_direction;"
+								. esc_attr($sticker_top) 
+								. esc_attr($sticker_left_right) 
+								. esc_attr($category_sticker_text_padding_top) 
+								. esc_attr($category_sticker_text_padding_right) 
+								. esc_attr($category_sticker_text_padding_bottom) 
+								. esc_attr($category_sticker_text_padding_left)
+								. esc_attr($category_sticker_sticker_rotate) 
+								. "animation-name: " . esc_attr($category_sticker_animation) . ";"
+								. "animation-duration: " . esc_attr($category_sticker_sticker_category_animation_type_delay) . ";"
+								. "animation-iteration-count: " . esc_attr($category_sticker_sticker_category_animation_iteration_count) . ";"
+								. "animation-direction: " . esc_attr($category_sticker_sticker_category_animation_direction) . ";"
 								.'">'. esc_attr( $sticker_text ) .'</span>';
 
 					} elseif ( !empty( $sticker_image[0] ) ) {//Check if sticker image exists
 
 						echo '<span class="'
-								. $sticker_class .'custom_sticker_image" style="background-image:url('. esc_url($sticker_image[0]) .');'
-								. $sticker_top 
-								. $sticker_image_width 
-								. $sticker_image_height
-								. $category_sticker_sticker_rotate 
-								. "animation-name: $category_sticker_animation;"
-								. "animation-duration: $category_sticker_sticker_category_animation_type_delay;"
-								. "animation-iteration-count: $category_sticker_sticker_category_animation_iteration_count;"
-								. "animation-direction: $category_sticker_sticker_category_animation_direction;"
+								. esc_attr($sticker_class) .'custom_sticker_image" style="
+								background-image: url(' . esc_url($sticker_image[0]) . ');
+    							background-repeat: no-repeat; background-position: center;
+    							background-size: ' . esc_attr(get_term_meta( $category->term_id, 'category_sticker_image_width', true )) . 'px ' . esc_attr(get_term_meta( $category->term_id, 'category_sticker_image_height', true )) . 'px;'
+								. esc_attr($sticker_top) 
+								. esc_attr($sticker_image_width) 
+								. esc_attr($sticker_image_height)
+								. esc_attr($category_sticker_sticker_rotate) 
+								. "animation-name: " . esc_attr($category_sticker_animation) . ";"
+								. "animation-duration: " . esc_attr($category_sticker_sticker_category_animation_type_delay) . ";"
+								. "animation-iteration-count: " . esc_attr($category_sticker_sticker_category_animation_iteration_count) . ";"
+								. "animation-direction: " . esc_attr($category_sticker_sticker_category_animation_direction) . ";"
+								. '"></span>';
+					} else {
+						
+						$images_base = plugin_dir_url(__FILE__) . 'images/';
+						if ($sticker_type === 'woosticker_ribbon') {
+							$side = ($sticker_pos === 'left') ? 'left' : 'right';
+							$file = "default-custom-placeholder-ribbon-{$side}.svg";
+						} else {
+							$file = 'default-custom-placeholder-round.svg';
+						}
+						$sticker_url = esc_url($images_base . $file);
+
+						echo '<span class="'
+								. esc_attr($sticker_class) .'custom_sticker_image" style="
+								background-image: url(' . esc_url($sticker_url) . ');
+    							background-repeat: no-repeat; background-position: center;
+    							background-size: ' . esc_attr(get_term_meta( $category->term_id, 'category_sticker_image_width', true )) . 'px ' . esc_attr(get_term_meta( $category->term_id, 'category_sticker_image_height', true )) . 'px;'
+								. esc_attr($sticker_top) 
+								. esc_attr($sticker_image_width) 
+								. esc_attr($sticker_image_height)
+								. esc_attr($category_sticker_sticker_rotate) 
+								. "animation-name: " . esc_attr($category_sticker_animation) . ";"
+								. "animation-duration: " . esc_attr($category_sticker_sticker_category_animation_type_delay) . ";"
+								. "animation-iteration-count: " . esc_attr($category_sticker_sticker_category_animation_iteration_count) . ";"
+								. "animation-direction: " . esc_attr($category_sticker_sticker_category_animation_direction) . ";"
 								. '"></span>';
 					}
 				}
@@ -2874,19 +2973,19 @@ class Woo_Stickers_By_Webline_Public {
 				?>
 					<style>
 						<?php if($category_sticker_sticker_category_animation_type == 'zoominout'){ ?>
-							@keyframes <?php echo $category_sticker_animation; ?> {
+							@keyframes <?php echo esc_attr($category_sticker_animation); ?> {
 								0% {
-									transform: scale(<?php echo $category_sticker_sticker_category_animation_scale ?>) rotate(0deg) translate(0, 0);
+									transform: scale(<?php echo esc_attr($category_sticker_sticker_category_animation_scale) ?>) rotate(0deg) translate(0, 0);
 								}
 							}
 						<?php } elseif($category_sticker_sticker_category_animation_type == 'spin'){?>
-							@keyframes <?php echo $category_sticker_animation; ?> {
+							@keyframes <?php echo esc_attr($category_sticker_animation); ?> {
 								100% {
 									transform: rotate(360deg) translate(0, 0) ;
 								}
 							}
 						<?php } elseif($category_sticker_sticker_category_animation_type == 'swing'){?>
-							@keyframes <?php echo $category_sticker_animation; ?> {
+							@keyframes <?php echo esc_attr($category_sticker_animation); ?> {
 								0% {
 									transform: rotate(0deg);
 								}
@@ -2897,7 +2996,7 @@ class Woo_Stickers_By_Webline_Public {
 									transform: rotate(-20deg);
 								}
 						<?php } elseif($category_sticker_sticker_category_animation_type == 'updown'){?>
-							@keyframes <?php echo $category_sticker_animation; ?> {
+							@keyframes <?php echo esc_attr($category_sticker_animation); ?> {
 								0%   {
 									top:0px;
 								}
@@ -2908,7 +3007,7 @@ class Woo_Stickers_By_Webline_Public {
 									top:0px;
 								}
 						<?php } elseif($category_sticker_sticker_category_animation_type == 'leftright'){?>
-							@keyframes <?php echo $category_sticker_animation; ?> {
+							@keyframes <?php echo esc_attr($category_sticker_animation); ?> {
 								0%   {
 									left:0px;
 									right: auto;
@@ -2940,9 +3039,12 @@ class Woo_Stickers_By_Webline_Public {
 		$display = false;
 		if( is_shop() || is_product() || is_product_category() ) $display = true;
 
-		//Check if load custom CSS where needed
-		if( apply_filters( 'woosticker_display_custom_css', $display ) ) {
-			echo '<style type="text/css">'. apply_filters( 'woosticker_load_custom_css', $this->general_settings['custom_css'] ) .'</style>';
+		// Check if load custom CSS where needed
+		if ( apply_filters( 'woosticker_display_custom_css', $display ) ) {
+			$custom_css = apply_filters( 'woosticker_load_custom_css', $this->general_settings['custom_css'] );
+			if ( ! empty( $custom_css ) ) {
+				echo '<style type="text/css">' . esc_html( $custom_css ) . '</style>';
+			}
 		}
 	}
 
@@ -2968,6 +3070,6 @@ class Woo_Stickers_By_Webline_Public {
 	 */
     public function custom_woocommerce_sale_flash() {
         global $post, $product;
-        echo $this->get_show_product_sale_badge('',$post, $product);
+        echo esc_attr($this->get_show_product_sale_badge('',$post, $product));
     }
 }

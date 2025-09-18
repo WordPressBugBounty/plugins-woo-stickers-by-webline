@@ -22,7 +22,7 @@ input.wsbw-small-text { width: 78px !important;margin-right: 5px !important;}
 /* Show other plugin Start
     19-06-2024
  */
- .show-other-plugin {
+.show-other-plugin {
     background-color: #FDBC33 !important;
 }
 .show-other-plugin h2,
@@ -81,16 +81,3 @@ ul.custom-bullet li {
     box-shadow: 0 4px 0 #696969;
 }
 /* Show other plugin End*/
-
-.text-val-bef{
-    font-size: 13px !important;
-    line-height: 1.5 !important;
-    margin-top: -10px !important;
-    font-weight: 400 !important;
-}
-
-.text-val-aft{
-    font-size: 14px !important;
-    margin: 10px 0 10px 0 !important;
-    font-weight: 600 !important;
-}

@@ -3,7 +3,7 @@
 /**
  * Register all actions and filters for the plugin
  *
- * @link       http://www.weblineindia.com
+ * @link       https://www.weblineindia.com
  * @since      1.0.0
  *
  * @package    Woo_Stickers_By_Webline

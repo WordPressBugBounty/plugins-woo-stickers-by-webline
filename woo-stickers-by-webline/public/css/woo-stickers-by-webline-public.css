@@ -17,7 +17,7 @@ ul li a span.woosticker.pos_right_detail{right:0px ;}
 .woosticker.new_ribbon_right, .woosticker.onsale_ribbon_right, .woosticker.soldout_ribbon_right{ right:0px; top:0px; left:auto; width: 56px; height: 54px;}
  
 .woosticker.new_round_right, .woosticker.onsale_round_right, .woosticker.soldout_round_right{ right:0px; top:10px; left:auto; width: 43px; height: 43px; }
-.woosticker.new_round_left, .woosticker.onsale_round_left, .woosticker.soldout_round_left{ left: 10px !important; top: 10px !important; width: 43px; height: 43px;}
+.woosticker.new_round_left, .woosticker.onsale_round_left, .woosticker.soldout_round_left{ left: 10px; top: 10px; width: 43px; height: 43px;}
  
 .woosticker.new_ribbon_left { background-position:-1px -1px; }
 .woosticker.new_ribbon_right { background-position:-72px -1px; }

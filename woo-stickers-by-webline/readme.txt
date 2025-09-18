@@ -1,9 +1,9 @@
-=== Stickers for WooCommerce by Webline ===
+=== Stickers for WooCommerce ===
 Contributors: weblineindia
 Tags: woocommerce stickers, woocommerce products stickers, product stickers, category stickers, product badge, woocommerce product badge, custom product badge, sitcker animation, scheduled sticker
 Requires at least: 3.5
-Tested up to: 6.7
-Stable tag: 1.2.6
+Tested up to: 6.8
+Stable tag: 1.2.8
 License: GPLv2 or later
 
 Enhance your buyer's shopping experience by adding various stickers to your products in your WooCommerce Shop. Various stickers are available like stickers for New, On Sale, Soldout Products, Category Stickers and you can use your custom stickers.
@@ -26,8 +26,6 @@ Add various stickers to your products easily from admin panel without any extra 
 - Admin can configure custom sticker group for products and also override their options at Category / Product level.
 - Text type stickers are configurable with color combination.
 - Admin can add custom CSS from settings.
-
-= Premium Features =
 - Admin can add custom settings to rotate the stickers.
 - Admin can add animation to the stickers.
 - Rotate and animation settings will work seamlessly for regular stickers.
@@ -62,7 +60,7 @@ If you like this plugin then please rate our plugin to help us spread the word.
 11. Sold Configuration of WooStickers Plugin.
 12. Custom Sticker Configuration of WooStickers Plugin.
 13. Stickers for WooCommerce Configuration on Category level.
-14. Stickers for WooCommerce by Webline Configuration on Product level.
+14. Stickers for WooCommerce Configuration on Product level.
 15. Category Stickers Configuration.
 
 
@@ -101,6 +99,20 @@ If you notice the Sold badge from the default theme or WooCommerce appearing rep
 This will hide the duplicate Sold badge.
 
 == Changelog ==
+
+= 1.2.8 =
+
+Release Date: September 08, 2025
+* Fix: Fixed all issues found in plugin checker tool.
+* Fix: Minor bug fixes.
+
+= 1.2.7 =
+
+Release Date: August 25, 2025
+
+* Major Update: All premium features are now 100% free! No more locked features – every sticker option is fully available for everyone. 
+* Fix: Checked compatibility with WordPress version 
+* Fix: Minor bug fixes.
 
 = 1.2.6 =
 

@@ -191,8 +191,39 @@
 			}
 		});
 	});
-	
 
+	// For Category Level
+	$(document).ready(function(){
+		jQuery('.wli_color_picker').wpColorPicker();
+
+		jQuery('.wsbw_upload_img_id').each(function(){
+			var id = $(this).val();
+			if( id == '' || id == 0 ) $(this).siblings('.wsbw_remove_image_button').hide();
+		});
+		jQuery('input:radio[class="wli-woosticker-radio-schedule-cat"]').click(function(e){
+			var val = $(this).attr("value");
+			$(this).attr("checked", true);
+			$(this).parent(".woo_opt").find(".wli_product_schedule_option").attr("value", val);	
+			if(val == 'text_schedule') {
+				$(this).parents('.wli-form-general').find('.custom_optimage_sch').css('display', 'none');
+				$(this).parents('.wli-form-general').find('tr.custom_opttext_sch').css('display', 'table-row');
+				$(this).parents('.wli-form-general').find('div.custom_opttext_sch, p.custom_opttext_sch').css('display', 'block');
+
+				$(this).parents('.wsbw_tab_content').find('.custom_optimage_sch').css('display', 'none');
+				$(this).parents('.wsbw_tab_content').find('tr.custom_opttext_sch').css('display', 'table-row');
+				$(this).parents('.wsbw_tab_content').find('div.custom_opttext_sch, p.custom_opttext_sch').css('display', 'block');
+			} else if(val == 'image_schedule') {
+				$(this).parents('.wli-form-general').find('.custom_opttext_sch').css('display', 'none');
+				$(this).parents('.wli-form-general').find('tr.custom_optimage_sch').css('display', 'table-row');
+				$(this).parents('.wli-form-general').find('div.custom_optimage_sch').css('display', 'block');
+
+				$(this).parents('.wsbw_tab_content').find('.custom_opttext_sch').css('display', 'none');
+				$(this).parents('.wsbw_tab_content').find('tr.custom_optimage_sch').css('display', 'table-row');
+				$(this).parents('.wsbw_tab_content').find('div.custom_optimage_sch').css('display', 'block');
+			}
+		});
+	});
+	
 	jQuery( document ).on( 'click', '.wsbw-sticker-options-wrap .nav-tab-wrapper .nav-tab', function( event ) {
 		event.preventDefault();
 		var $this = $(this);
@@ -202,7 +233,7 @@
 		jQuery( $this.attr('href') ).show();
 	});
 
-	 // Uploading files
+	// Uploading files
 	var file_frame;
 	var $upload_btn;
 
@@ -262,8 +293,10 @@
 			var selectedValue = $(this).val();
 			if (selectedValue === 'zoominout') {
 				$('#zoominout-options-new-global').show();
+				$('.zoominout-options-new-global').show();
 			} else {
 				$('#zoominout-options-new-global').hide();
+				$('.zoominout-options-new-global').hide();
 			}
 		});
 		$('#new_product_sticker_animation_type').trigger('change');
@@ -272,8 +305,10 @@
 			var selectedValue = $(this).val();
 			if (selectedValue === 'zoominout') {
 				$('#zoominout-options-sale-global').show();
+				$('.zoominout-options-sale-global').show();
 			} else {
 				$('#zoominout-options-sale-global').hide();
+				$('.zoominout-options-sale-global').hide();
 			}
 		});
 		$('#sale_product_sticker_animation_type').trigger('change');
@@ -282,8 +317,10 @@
 			var selectedValue = $(this).val();
 			if (selectedValue === 'zoominout') {
 				$('#zoominout-options-sold-global').show();
+				$('.zoominout-options-sold-global').show();
 			} else {
 				$('#zoominout-options-sold-global').hide();
+				$('.zoominout-options-sold-global').hide();
 			}
 		});
 		$('#sold_product_sticker_animation_type').trigger('change');
@@ -292,8 +329,10 @@
 			var selectedValue = $(this).val();
 			if (selectedValue === 'zoominout') {
 				$('#zoominout-options-cust-global').show();
+				$('.zoominout-options-cust-global').show();
 			} else {
 				$('#zoominout-options-cust-global').hide();
+				$('.zoominout-options-cust-global').hide();
 			}
 		});
 		$('#cust_product_sticker_animation_type').trigger('change');
@@ -438,6 +477,218 @@
 			}
 		});
 		$('#category_sticker_sticker_category_animation_type').trigger('change');
+
+		//Global
+		$('#new_product_sticker_animation_type').on('change', function() {
+			var selectedValue = $(this).val();
+			if (selectedValue === 'none') {
+				$('#new_product_sticker_animation_scale').prop('disabled', true);
+				$('#new_product_sticker_animation_direction').prop('disabled', true);
+				$('#new_product_sticker_animation_iteration_count').prop('disabled', true);
+				$('#new_product_sticker_animation_delay').prop('disabled', true);
+			} else {
+				$('#new_product_sticker_animation_scale').prop('disabled', false);
+				$('#new_product_sticker_animation_direction').prop('disabled', false);
+				$('#new_product_sticker_animation_iteration_count').prop('disabled', false);
+				$('#new_product_sticker_animation_delay').prop('disabled', false);
+			}
+		});
+		$('#new_product_sticker_animation_type').trigger('change');
+
+		$('#sale_product_sticker_animation_type').on('change', function() {
+			var selectedValue = $(this).val();
+			if (selectedValue === 'none') {
+				$('#sale_product_sticker_animation_scale').prop('disabled', true);
+				$('#sale_product_sticker_animation_direction').prop('disabled', true);
+				$('#sale_product_sticker_animation_iteration_count').prop('disabled', true);
+				$('#sale_product_sticker_animation_delay').prop('disabled', true);
+			} else {
+				$('#sale_product_sticker_animation_scale').prop('disabled', false);
+				$('#sale_product_sticker_animation_direction').prop('disabled', false);
+				$('#sale_product_sticker_animation_iteration_count').prop('disabled', false);
+				$('#sale_product_sticker_animation_delay').prop('disabled', false);
+			}
+		});
+		$('#sale_product_sticker_animation_type').trigger('change');
+
+		$('#sold_product_sticker_animation_type').on('change', function() {
+			var selectedValue = $(this).val();
+			if (selectedValue === 'none') {
+				$('#sold_product_sticker_animation_scale').prop('disabled', true);
+				$('#sold_product_sticker_animation_direction').prop('disabled', true);
+				$('#sold_product_sticker_animation_iteration_count').prop('disabled', true);
+				$('#sold_product_sticker_animation_delay').prop('disabled', true);
+			} else {
+				$('#sold_product_sticker_animation_scale').prop('disabled', false);
+				$('#sold_product_sticker_animation_direction').prop('disabled', false);
+				$('#sold_product_sticker_animation_iteration_count').prop('disabled', false);
+				$('#sold_product_sticker_animation_delay').prop('disabled', false);
+			}
+		});
+		$('#sold_product_sticker_animation_type').trigger('change');
+
+		$('#cust_product_sticker_animation_type').on('change', function() {
+			var selectedValue = $(this).val();
+			if (selectedValue === 'none') {
+				$('#cust_product_sticker_animation_scale').prop('disabled', true);
+				$('#cust_product_sticker_animation_direction').prop('disabled', true);
+				$('#cust_product_sticker_animation_iteration_count').prop('disabled', true);
+				$('#cust_product_sticker_animation_delay').prop('disabled', true);
+			} else {
+				$('#cust_product_sticker_animation_scale').prop('disabled', false);
+				$('#cust_product_sticker_animation_direction').prop('disabled', false);
+				$('#cust_product_sticker_animation_iteration_count').prop('disabled', false);
+				$('#cust_product_sticker_animation_delay').prop('disabled', false);
+			}
+		});
+		$('#cust_product_sticker_animation_type').trigger('change');
+
+		// Product
+		$('#np_sticker_animation_type').on('change', function() {
+			var selectedValue = $(this).val();
+			if (selectedValue === 'none') {
+				$('#np_sticker_animation_scale').prop('disabled', true);
+				$('#np_sticker_animation_direction').prop('disabled', true);
+				$('#np_sticker_animation_iteration_count').prop('disabled', true);
+				$('#np_sticker_animation_delay').prop('disabled', true);
+			} else {
+				$('#np_sticker_animation_scale').prop('disabled', false);
+				$('#np_sticker_animation_direction').prop('disabled', false);
+				$('#np_sticker_animation_iteration_count').prop('disabled', false);
+				$('#np_sticker_animation_delay').prop('disabled', false);
+			}
+		});
+		$('#np_sticker_animation_type').trigger('change');
+
+		$('#pos_sticker_animation_type').on('change', function() {
+			var selectedValue = $(this).val();
+			if (selectedValue === 'none') {
+				$('#pos_sticker_animation_scale').prop('disabled', true);
+				$('#pos_sticker_animation_direction').prop('disabled', true);
+				$('#pos_sticker_animation_iteration_count').prop('disabled', true);
+				$('#pos_sticker_animation_delay').prop('disabled', true);
+			} else {
+				$('#pos_sticker_animation_scale').prop('disabled', false);
+				$('#pos_sticker_animation_direction').prop('disabled', false);
+				$('#pos_sticker_animation_iteration_count').prop('disabled', false);
+				$('#pos_sticker_animation_delay').prop('disabled', false);
+			}
+		});
+		$('#pos_sticker_animation_type').trigger('change');
+
+		$('#sop_sticker_animation_type').on('change', function() {
+			var selectedValue = $(this).val();
+			if (selectedValue === 'none') {
+				$('#sop_sticker_animation_scale').prop('disabled', true);
+				$('#sop_sticker_animation_direction').prop('disabled', true);
+				$('#sop_sticker_animation_iteration_count').prop('disabled', true);
+				$('#sop_sticker_animation_delay').prop('disabled', true);
+			} else {
+				$('#sop_sticker_animation_scale').prop('disabled', false);
+				$('#sop_sticker_animation_direction').prop('disabled', false);
+				$('#sop_sticker_animation_iteration_count').prop('disabled', false);
+				$('#sop_sticker_animation_delay').prop('disabled', false);
+			}
+		});
+		$('#sop_sticker_animation_type').trigger('change');
+
+		$('#cust_sticker_animation_type').on('change', function() {
+			var selectedValue = $(this).val();
+			if (selectedValue === 'none') {
+				$('#cust_sticker_animation_scale').prop('disabled', true);
+				$('#cust_sticker_animation_direction').prop('disabled', true);
+				$('#cust_sticker_animation_iteration_count').prop('disabled', true);
+				$('#cust_sticker_animation_delay').prop('disabled', true);
+			} else {
+				$('#cust_sticker_animation_scale').prop('disabled', false);
+				$('#cust_sticker_animation_direction').prop('disabled', false);
+				$('#cust_sticker_animation_iteration_count').prop('disabled', false);
+				$('#cust_sticker_animation_delay').prop('disabled', false);
+			}
+		});
+		$('#cust_sticker_animation_type').trigger('change');
+
+		//Category
+		$('#np_sticker_category_animation_type').on('change', function() {
+			var selectedValue = $(this).val();
+			if (selectedValue === 'none') {
+				$('#np_sticker_category_animation_scale').prop('disabled', true);
+				$('#np_sticker_category_animation_direction').prop('disabled', true);
+				$('#np_sticker_category_animation_iteration_count').prop('disabled', true);
+				$('#np_sticker_category_animation_type_delay').prop('disabled', true);
+			} else {
+				$('#np_sticker_category_animation_scale').prop('disabled', false);
+				$('#np_sticker_category_animation_direction').prop('disabled', false);
+				$('#np_sticker_category_animation_iteration_count').prop('disabled', false);
+				$('#np_sticker_category_animation_type_delay').prop('disabled', false);
+			}
+		});
+		$('#np_sticker_category_animation_type').trigger('change');
+
+		$('#pos_sticker_category_animation_type').on('change', function() {
+			var selectedValue = $(this).val();
+			if (selectedValue === 'none') {
+				$('#pos_sticker_category_animation_scale').prop('disabled', true);
+				$('#pos_sticker_category_animation_direction').prop('disabled', true);
+				$('#pos_sticker_category_animation_iteration_count').prop('disabled', true);
+				$('#pos_sticker_category_animation_type_delay').prop('disabled', true);
+			} else {
+				$('#pos_sticker_category_animation_scale').prop('disabled', false);
+				$('#pos_sticker_category_animation_direction').prop('disabled', false);
+				$('#pos_sticker_category_animation_iteration_count').prop('disabled', false);
+				$('#pos_sticker_category_animation_type_delay').prop('disabled', false);
+			}
+		});
+		$('#pos_sticker_category_animation_type').trigger('change');
+
+		$('#sop_sticker_category_animation_type').on('change', function() {
+			var selectedValue = $(this).val();
+			if (selectedValue === 'none') {
+				$('#sop_sticker_category_animation_scale').prop('disabled', true);
+				$('#sop_sticker_category_animation_direction').prop('disabled', true);
+				$('#sop_sticker_category_animation_iteration_count').prop('disabled', true);
+				$('#sop_sticker_category_animation_type_delay').prop('disabled', true);
+			} else {
+				$('#sop_sticker_category_animation_scale').prop('disabled', false);
+				$('#sop_sticker_category_animation_direction').prop('disabled', false);
+				$('#sop_sticker_category_animation_iteration_count').prop('disabled', false);
+				$('#sop_sticker_category_animation_type_delay').prop('disabled', false);
+			}
+		});
+		$('#sop_sticker_category_animation_type').trigger('change');
+
+		$('#cust_sticker_category_animation_type').on('change', function() {
+			var selectedValue = $(this).val();
+			if (selectedValue === 'none') {
+				$('#cust_sticker_category_animation_scale').prop('disabled', true);
+				$('#cust_sticker_category_animation_direction').prop('disabled', true);
+				$('#cust_sticker_category_animation_iteration_count').prop('disabled', true);
+				$('#cust_sticker_category_animation_type_delay').prop('disabled', true);
+			} else {
+				$('#cust_sticker_category_animation_scale').prop('disabled', false);
+				$('#cust_sticker_category_animation_direction').prop('disabled', false);
+				$('#cust_sticker_category_animation_iteration_count').prop('disabled', false);
+				$('#cust_sticker_category_animation_type_delay').prop('disabled', false);
+			}
+		});
+		$('#cust_sticker_category_animation_type').trigger('change');
+
+		$('#category_sticker_sticker_category_animation_type').on('change', function() {
+			var selectedValue = $(this).val();
+			if (selectedValue === 'none') {
+				$('#category_sticker_sticker_category_animation_scale').prop('disabled', true);
+				$('#category_sticker_sticker_category_animation_direction').prop('disabled', true);
+				$('#category_sticker_sticker_category_animation_iteration_count').prop('disabled', true);
+				$('#category_sticker_sticker_category_animation_type_delay').prop('disabled', true);
+			} else {
+				$('#category_sticker_sticker_category_animation_scale').prop('disabled', false);
+				$('#category_sticker_sticker_category_animation_direction').prop('disabled', false);
+				$('#category_sticker_sticker_category_animation_iteration_count').prop('disabled', false);
+				$('#category_sticker_sticker_category_animation_type_delay').prop('disabled', false);
+			}
+		});
+		$('#category_sticker_sticker_category_animation_type').trigger('change');
+
 	});
 
 	// Global Level

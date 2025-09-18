@@ -6,7 +6,7 @@
  * A class definition that includes attributes and functions used across both the
  * public-facing side of the site and the admin area.
  *
- * @link       http://www.weblineindia.com
+ * @link       https://www.weblineindia.com
  * @since      1.0.0
  *
  * @package    Woo_Stickers_By_Webline
