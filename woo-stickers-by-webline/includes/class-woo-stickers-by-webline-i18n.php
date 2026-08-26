@@ -3,8 +3,8 @@
 /**
  * Define the internationalization functionality
  *
- * Loads and defines the internationalization files for this plugin
- * so that it is ready for translation.
+ * WordPress automatically loads translations for plugins hosted on WordPress.org
+ * (just-in-time since WordPress 4.6). This class is retained for backward compatibility.
  *
  * @link       https://www.weblineindia.com
  * @since      1.0.0
@@ -13,11 +13,14 @@
  * @subpackage Woo_Stickers_By_Webline/includes
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * Define the internationalization functionality.
  *
- * Loads and defines the internationalization files for this plugin
- * so that it is ready for translation.
+ * WordPress automatically loads translations for plugins hosted on WordPress.org.
  *
  * @since      1.0.0
  * @package    Woo_Stickers_By_Webline
@@ -25,23 +28,5 @@
  * @author     Weblineindia <info@weblineindia.com>
  */
 class Woo_Stickers_By_Webline_i18n {
-
-
-	/**
-	 * Load the plugin text domain for translation.
-	 *
-	 * @since    1.0.0
-	 */
-	public function load_plugin_textdomain() {
-
-		load_plugin_textdomain(
-			'woo-stickers-by-webline',
-			false,
-			dirname( dirname( plugin_basename( __FILE__ ) ) ) . '/languages/'
-		);
-
-	}
-
-
 
 }

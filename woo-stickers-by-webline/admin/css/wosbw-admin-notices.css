@@ -1,15 +1,24 @@
 
 /* CSS for Configuration Settings Page Starts*/
+.wrap-wosbw .inner-wosbw {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+}
 .wrap-wosbw .inner-wosbw .left-box-wosbw{
-    padding-right: 30px;
-    width: calc(100% - 450px);
+    flex: 1;
+    min-width: 0;
+    width: auto;
+    padding-right: 0;
 }
 .wrap-wosbw .inner-wosbw .right-box-wosbw{
     width: 400px;
-    position: fixed;
-    top: 50px;
-    right: 5px;
-    z-index: 1000;
+    flex-shrink: 0;
+    position: sticky;
+    top: 46px;
+    max-height: calc(100vh - 70px);
+    overflow-y: auto;
+    z-index: 10;
 }
 
 .wosbw-plugin-cta{
@@ -59,15 +68,15 @@
 }
 
 @media screen and (max-width: 1366px) {
-    .wrap-wosbw .inner-wosbw .left-box-wosbw{
-        width: calc(100% - 350px);
-    }
     .wrap-wosbw .inner-wosbw .right-box-wosbw{
         width: 300px;
     }
 }
 
 @media screen and (max-width: 1023px) {
+    .wrap-wosbw .inner-wosbw {
+        flex-direction: column;
+    }
     .wrap-wosbw .inner-wosbw .left-box-wosbw{
         width: 100%;
         box-sizing: border-box;
@@ -76,6 +85,8 @@
     .wrap-wosbw .inner-wosbw .right-box-wosbw{
         position: static;
         width: 100%;
+        max-height: none;
+        overflow: visible;
         box-sizing: border-box;
     }
 }

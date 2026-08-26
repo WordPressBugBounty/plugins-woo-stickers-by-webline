@@ -10,6 +10,10 @@
  * @subpackage Woo_Stickers_By_Webline/public
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * The public-facing functionality of the plugin.
  *
@@ -3040,8 +3044,8 @@ class Woo_Stickers_By_Webline_Public {
 		if( is_shop() || is_product() || is_product_category() ) $display = true;
 
 		// Check if load custom CSS where needed
-		if ( apply_filters( 'woosticker_display_custom_css', $display ) ) {
-			$custom_css = apply_filters( 'woosticker_load_custom_css', $this->general_settings['custom_css'] );
+		if ( apply_filters( 'woo_stickers_by_webline_display_custom_css', $display ) ) {
+			$custom_css = apply_filters( 'woo_stickers_by_webline_load_custom_css', $this->general_settings['custom_css'] );
 			if ( ! empty( $custom_css ) ) {
 				echo '<style type="text/css">' . esc_html( $custom_css ) . '</style>';
 			}

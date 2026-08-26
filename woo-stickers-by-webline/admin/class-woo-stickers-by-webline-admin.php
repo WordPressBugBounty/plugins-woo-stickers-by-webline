@@ -10,6 +10,10 @@
  * @subpackage Woo_Stickers_By_Webline/admin
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * The admin-specific functionality of the plugin.
  *

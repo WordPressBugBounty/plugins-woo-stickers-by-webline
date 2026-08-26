@@ -65,7 +65,7 @@ ul.custom-bullet li {
     color: #EEEEEE;
     line-height: 2.15384615;
     min-height: 30px;
-    margin: 0;
+    margin: 0 0 6px 0;
     padding: 4px 14px;
     cursor: pointer;
     -webkit-appearance: none;

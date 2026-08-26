@@ -15,13 +15,14 @@
  * Plugin Name:       Stickers for WooCommerce
  * Plugin URI:        https://www.weblineindia.com
  * Description:       Product sticker extension to improve customer experience while shopping by providing stickers for New products, On Sale products, Soldout Products which is easily configure from admin panel without any extra developer efforts.
- * Version:           1.2.8
+ * Version:           1.2.9
  * Author:            Weblineindia
  * Author URI:        https://www.weblineindia.com
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       woo-stickers-by-webline
  * Domain Path:       /languages
+ * Requires at least: 5.9
  * Requires Plugins: woocommerce
  */
 
@@ -31,12 +32,24 @@ if ( ! defined( 'WPINC' ) ) {
 }
 
 /**
- * Check if WooCommerce is active
+ * Check if WooCommerce is active.
+ *
+ * @since 1.2.9
+ * @return bool
  */
+function woo_stickers_by_webline_is_woocommerce_active() {
+	$active_plugins = (array) get_option( 'active_plugins', array() );
 
-if (in_array ( 'woocommerce/woocommerce.php', apply_filters ( 'active_plugins', get_option ( 'active_plugins' ) ) )) {
+	if ( is_multisite() ) {
+		$active_plugins = array_merge( $active_plugins, array_keys( (array) get_site_option( 'active_sitewide_plugins', array() ) ) );
+	}
 
-    define ( 'WS_VERSION', '1.2.8' );
+	return in_array( 'woocommerce/woocommerce.php', $active_plugins, true );
+}
+
+if ( woo_stickers_by_webline_is_woocommerce_active() ) {
+
+    define ( 'WS_VERSION', '1.2.9' );
     define ( 'WS_OPTION_NAME', 'WS_settings' );
     define ( 'WS_PLUGIN_FILE', basename ( __FILE__ ) );
     define('WOSBW_DIR', plugin_dir_path(__FILE__));
@@ -46,7 +59,7 @@ if (in_array ( 'woocommerce/woocommerce.php', apply_filters ( 'active_plugins', 
      * The code that runs during plugin activation.
      * This action is documented in includes/class-woo-stickers-by-webline-activator.php
      */
-    function activate_woo_stickers_by_webline() {
+    function woo_stickers_by_webline_activate() {
         require_once plugin_dir_path( __FILE__ ) . 'includes/class-woo-stickers-by-webline-activator.php';
         Woo_Stickers_By_Webline_Activator::activate();
     }
@@ -55,13 +68,13 @@ if (in_array ( 'woocommerce/woocommerce.php', apply_filters ( 'active_plugins', 
      * The code that runs during plugin deactivation.
      * This action is documented in includes/class-woo-stickers-by-webline-deactivator.php
      */
-    function deactivate_woo_stickers_by_webline() {
+    function woo_stickers_by_webline_deactivate() {
         require_once plugin_dir_path( __FILE__ ) . 'includes/class-woo-stickers-by-webline-deactivator.php';
         Woo_Stickers_By_Webline_Deactivator::deactivate();
     }
 
-    register_activation_hook( __FILE__, 'activate_woo_stickers_by_webline' );
-    register_deactivation_hook( __FILE__, 'deactivate_woo_stickers_by_webline' );
+    register_activation_hook( __FILE__, 'woo_stickers_by_webline_activate' );
+    register_deactivation_hook( __FILE__, 'woo_stickers_by_webline_deactivate' );
 
     /**
      * The core plugin class that is used to define internationalization,
@@ -78,11 +91,11 @@ if (in_array ( 'woocommerce/woocommerce.php', apply_filters ( 'active_plugins', 
      *
      * @since    1.0.0
      */
-    function run_woo_stickers_by_webline() {
+    function woo_stickers_by_webline_run() {
 
         $plugin = new Woo_Stickers_By_Webline();
         $plugin->run();
 
     }
-    run_woo_stickers_by_webline();
+    woo_stickers_by_webline_run();
 }

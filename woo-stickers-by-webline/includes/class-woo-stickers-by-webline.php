@@ -13,6 +13,10 @@
  * @subpackage Woo_Stickers_By_Webline/includes
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * The core plugin class.
  *
@@ -143,18 +147,13 @@ class Woo_Stickers_By_Webline {
 	/**
 	 * Define the locale for this plugin for internationalization.
 	 *
-	 * Uses the Woo_Stickers_By_Webline_i18n class in order to set the domain and to register the hook
-	 * with WordPress.
+	 * WordPress automatically loads translations for WordPress.org plugins since 4.6.
 	 *
 	 * @since    1.0.0
 	 * @access   private
 	 */
 	private function set_locale() {
-
-		$plugin_i18n = new Woo_Stickers_By_Webline_i18n();
-
-		$this->loader->add_action( 'plugins_loaded', $plugin_i18n, 'load_plugin_textdomain' );
-
+		// WordPress 4.6+ automatically loads translations for WordPress.org plugins.
 	}
 
 	/**

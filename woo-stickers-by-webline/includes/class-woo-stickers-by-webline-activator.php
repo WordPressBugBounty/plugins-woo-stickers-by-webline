@@ -10,6 +10,10 @@
  * @subpackage Woo_Stickers_By_Webline/includes
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * Fired during plugin activation.
  *
